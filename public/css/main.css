@@ -1,7 +1,7 @@
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-image: url('./../images/backgroundBlack.jpg');
   background-repeat: no-repeat, no-repeat;
@@ -18,15 +18,20 @@ main p.segment {
   color: #FFF;
 }
 
+main p.segment {
+  margin-top: 30px;
+}
+
 main h1.main_logo span {
   font-family: 'Clarendon BLK BT', serif;
   font-size: 52px;
 }
 
 main.main_home p.slogan {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 main.main_home p.segment {
-  font-size: 30px;
+  font-family: 'Clarendon', serif;
+  font-size: 24px;
 }
