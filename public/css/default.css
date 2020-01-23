@@ -93,25 +93,29 @@ footer {
   margin: 10px 0;
 }
 
-.logo>a>span {
+.logo span {
   font-family: 'Clarendon BLK BT';
   font-size: 24px;
+  transition: all ease 500ms;
 }
 
 .logo>a>span:first-child {
-  color: #00668C;
-}
-
-.logo>a>span:nth-child(2) {
   color: #FF3F3F;
 }
 
-.logo span>span {
-  font-family: inherit;
+.logo>a>span:nth-child(2) {
+  color: #00668C;
+}
+
+.logo span>span,
+.logo:hover a span {
   color: #FFF;
 }
 
-.logo:hover span:first-child,
-.logo:hover span:nth-child(2) {
-  color: #FFF;
+.logo:hover a span:first-child>span {
+  color: #FF3F3F;
+}
+
+.logo:hover a span:nth-child(2)>span {
+  color: #00668C;
 }
