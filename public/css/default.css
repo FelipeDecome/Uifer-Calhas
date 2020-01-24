@@ -143,5 +143,27 @@ footer {
   width: 150px;
   padding: 10px 0;
   border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.btn span {
   font-family: 'Clarendon BLK BT', serif;
+  font-size: 16px;
+}
+
+.btn-yellow {
+  background: #FFBB00;
+}
+
+.btn-yellow:hover {
+  background: transparent;
+  border-color: #FFBB00;
+}
+
+.btn-yellow:hover span {
+  color: #FFBB00;
+}
+
+.btn-yellow:hover i {
+  color: #FFF;
 }

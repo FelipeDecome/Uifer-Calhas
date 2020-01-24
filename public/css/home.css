@@ -18,6 +18,11 @@ main p.segment {
   color: #FFF;
 }
 
+main h1.main_logo,
+main p.slogan {
+  animation: fade ease 3s;
+  animation-fill-mode: backwards;
+}
 
 main h1.main_logo span {
   font-family: 'Clarendon BLK BT', serif;
@@ -28,13 +33,59 @@ main.main_home p.slogan {
   font-size: 18px;
 }
 
-main.main_home p.segment,
-main.main_home div.see_more {
-  margin-top: 30px;
+main.main_home div.divider {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  height: 1px;
+  background-color: #999;
+  margin: 20px 0 0;
+}
+
+main.main_home p.segment {
+  position: relative;
 }
 
 main.main_home p.segment,
 main.main_home p.segment span {
   font-family: 'Clarendon', serif;
   font-size: 24px;
+}
+
+main.main_home p.segment,
+main.main_home div.see_more {
+  margin-top: 20px;
+}
+
+main.main_home div.see_more .btn {
+  animation: moveUp ease 2s;
+  animation-fill-mode: backwards;
+  animation-delay: 500ms;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moveUp {
+  from {
+    opacity: 0;
+    margin-top: 50px;
+  }
+
+  25% {
+    opacity: 1;
+    margin-top: 50px;
+  }
+
+  to {
+    margin-top: 0;
+  }
 }
