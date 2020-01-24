@@ -37,20 +37,16 @@ main.main_home div.divider {
   content: "";
   display: block;
   margin: 0 auto;
-  width: 60%;
+  width: 40%;
   height: 1px;
   background-color: #999;
   margin: 20px 0 0;
 }
 
-main.main_home p.segment {
-  position: relative;
-}
-
 main.main_home p.segment,
 main.main_home p.segment span {
   font-family: 'Clarendon', serif;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 main.main_home p.segment {
@@ -66,6 +62,11 @@ main.main_home div.see_more .btn {
   animation-fill-mode: backwards;
   animation-delay: 500ms;
 }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.main_home {}
+}
+
 
 @keyframes fade {
   from {
