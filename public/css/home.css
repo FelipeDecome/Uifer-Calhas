@@ -18,9 +18,6 @@ main p.segment {
   color: #FFF;
 }
 
-main p.segment {
-  margin-top: 30px;
-}
 
 main h1.main_logo span {
   font-family: 'Clarendon BLK BT', serif;
@@ -31,7 +28,13 @@ main.main_home p.slogan {
   font-size: 18px;
 }
 
-main.main_home p.segment {
+main.main_home p.segment,
+main.main_home div.see_more {
+  margin-top: 30px;
+}
+
+main.main_home p.segment,
+main.main_home p.segment span {
   font-family: 'Clarendon', serif;
   font-size: 24px;
 }

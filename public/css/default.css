@@ -83,6 +83,24 @@ footer {
 
 */
 
+/*<=<** === DEFAULT CLASSES === **>=>*/
+.red {
+  color: #FF3F3F;
+}
+
+.blue {
+  color: #00668C;
+}
+
+.yellow {
+  color: #FFBB00;
+}
+
+.green {
+  color: #1DC6A7;
+}
+
+
 /*<=<** === LOGO CSS === **>=>*/
 
 /* .logo {
@@ -118,4 +136,12 @@ footer {
 
 .logo:hover a span:nth-child(2)>span {
   color: #00668C;
+}
+
+.btn {
+  border: none;
+  width: 150px;
+  padding: 10px 0;
+  border-radius: 3px;
+  font-family: 'Clarendon BLK BT', serif;
 }

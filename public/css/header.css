@@ -26,7 +26,11 @@ header.header-top {
   animation: navbarEffect ease 1s;
 }
 
-.header .logo {
+header.header>div {
+  width: 80%;
+}
+
+header.header .logo {
   text-align: center;
 }
 
@@ -59,7 +63,6 @@ nav.navbar ul>li {
 /*<=<** === COLLAPSE ICONS CSS === **>=>*/
 
 .collapse-icons-bar {
-  width: 80%;
   display: flex;
   justify-self: center;
   flex-direction: column;
