@@ -30,9 +30,11 @@ header.header>div {
   width: 80%;
 }
 
-header.header .logo {
+header.header>div.logo {
   text-align: center;
 }
+
+/*<=<** === NAVBAR CSS === **>=>*/
 
 nav.navbar {
   position: fixed;
@@ -40,7 +42,6 @@ nav.navbar {
   width: 100%;
   margin-top: 54px;
   right: 0;
-  /* background: rgba(31, 31, 31, 0.85); */
 }
 
 nav.navbar.collapse {
@@ -56,8 +57,16 @@ nav.navbar ul>li {
   font-size: 18px;
   font-weight: 700;
   color: #FFF;
-  margin: 15px 30px;
+  /* margin: 15px 30px; */
+  padding: 10px 0;
   text-align: center;
+  transition: all ease 500ms;
+  /* cursor: pointer; */
+}
+
+nav.navbar>ul>li:hover {
+  /* color: #333; */
+  background-color: #FFBB00;
 }
 
 /*<=<** === COLLAPSE ICONS CSS === **>=>*/
@@ -86,7 +95,7 @@ div.collapse-menu-icon>ul {
 div.collapse-menu-icon>ul>li {
   background-color: #FFF;
   transition-property: transform, color;
-  transition: ease 500ms;
+  transition: ease 300ms;
   margin: 4px 0;
 }
 
@@ -129,12 +138,54 @@ div.collapse-menu-icon.close>ul>li:nth-child(2) {
 
 @media (min-width: 992px) {
   header.header {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
   }
 
-  .collapse-icons-bar {
+  /* .collapse-icons-bar {
     grid-column: 3 / 4;
+  } */
+
+  header.header>div.logo {
+    width: 100%;
   }
+
+  nav.navbar {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  nav.navbar>ul {
+    flex-direction: row;
+    align-content: space-around;
+  }
+
+  nav.navbar>ul>li {
+    position: relative;
+    margin: 0;
+    padding: 10px 15px;
+  }
+
+  nav.navbar>ul>li:hover {
+    color: #FFBB00;
+    background-color: transparent;
+  }
+
+  nav.navbar>ul>li:hover::before,
+  nav.navbar>ul>li.active::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #FFBB00;
+  }
+
 }
 
 /* VERIFICAR ANIMAÇÃO */
