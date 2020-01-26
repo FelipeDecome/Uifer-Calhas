@@ -1,0 +1,33 @@
+footer.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer.footer div.copyright {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer.footer div.copyright p,
+footer.footer div.copyright p span {
+  font-family: 'Clarendon', serif;
+  font-size: 14px;
+  color: #FFF;
+}
+
+footer.footer div.copyright p span {
+  color: #FFBB00;
+}
+
+footer.footer div.copyright i {
+  padding: 0 5px 0 0;
+  font-size: 18px;
+  color: #FFBB00;
+}

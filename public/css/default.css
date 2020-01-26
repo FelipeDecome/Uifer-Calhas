@@ -144,6 +144,7 @@ footer {
   padding: 10px 0;
   border-radius: 3px;
   border: 1px solid transparent;
+  transition: 300ms;
 }
 
 .btn span {
