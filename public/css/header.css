@@ -53,7 +53,7 @@ nav.navbar>ul {
   flex-direction: column;
 }
 
-nav.navbar ul>li {
+nav.navbar ul li {
   font-size: 18px;
   font-weight: 700;
   color: #FFF;
@@ -64,7 +64,7 @@ nav.navbar ul>li {
   /* cursor: pointer; */
 }
 
-nav.navbar>ul>li:hover {
+nav.navbar>ul li:hover {
   /* color: #333; */
   background-color: #FFBB00;
 }
@@ -74,17 +74,18 @@ nav.navbar>ul>li:hover {
 header.header div.collapse-icons-bar {
   display: flex;
   justify-self: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.collapse-icons-bar div.collapse-menu-icon {
-  padding: 5px 10px;
-  /* border: 1px solid #999;
-  border-radius: 5px; */
+.collapse-icons-bar div.collapse-menu-icon,
+.collapse-icons-bar div.collapse-search-bar-icon {
+  padding: 0 10px;
   cursor: pointer;
 }
+
+/*<=<** === COLLAPSE MENU ICON CSS === **>=>*/
 
 div.collapse-menu-icon>ul {
   display: flex;
@@ -136,6 +137,44 @@ div.collapse-menu-icon.close>ul>li:nth-child(2) {
   display: none;
 }
 
+/*<=<** === COLLAPSE SEARCH BAR ICON CSS === **>=>*/
+
+div.collapse-icons-bar div.collapse-search-bar-icon>ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transform: rotate(45deg);
+}
+
+div.collapse-search-bar-icon>ul>li {
+  transition: all ease 300ms;
+}
+
+div.collapse-search-bar-icon>ul>li:first-child {
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  border: 2px solid #FFF;
+}
+
+div.collapse-search-bar-icon>ul:hover li:first-child {
+  border-color: #FFBB00;
+}
+
+div.collapse-search-bar-icon>ul>li:nth-child(2) {
+  width: 12px;
+  height: 2px;
+  background-color: #FFF;
+}
+
+div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
+  background-color: #FFBB00;
+}
+
+
+/*<=<** === MEDIA >=992 CSS === **>=>*/
+
 @media (min-width: 992px) {
   header.header {
     grid-template-columns: 1fr 2fr 1fr;
@@ -163,19 +202,19 @@ div.collapse-menu-icon.close>ul>li:nth-child(2) {
     align-content: space-around;
   }
 
-  nav.navbar>ul>li {
+  nav.navbar>ul li {
     position: relative;
     margin: 0;
     padding: 10px 15px;
   }
 
-  nav.navbar>ul>li:hover {
+  nav.navbar>ul li:hover {
     color: #FFBB00;
     background-color: transparent;
   }
 
-  nav.navbar>ul>li:hover::before,
-  nav.navbar>ul>li.active::before {
+  nav.navbar>ul li:hover::before,
+  nav.navbar>ul li.active::before {
     content: '';
     display: block;
     position: absolute;
@@ -184,6 +223,10 @@ div.collapse-menu-icon.close>ul>li:nth-child(2) {
     width: 100%;
     height: 100%;
     border-bottom: 2px solid #FFBB00;
+  }
+
+  div.collapse-icons-bar div.collapse-menu-icon {
+    display: none;
   }
 
 }
