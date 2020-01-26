@@ -139,6 +139,22 @@ div.collapse-menu-icon.close>ul>li:nth-child(2) {
 
 /*<=<** === COLLAPSE SEARCH BAR ICON CSS === **>=>*/
 
+div.collapse-icons-bar div.collapse-search-bar-icon>i {
+  font-size: 20px;
+  color: #FFF;
+  transition: all ease 500ms;
+}
+
+div.collapse-icons-bar div.collapse-search-bar-icon>i:hover {
+  color: #FFBB00;
+}
+
+div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
+  color: #FFBB00;
+  transform: rotate(-270deg);
+}
+
+/*
 div.collapse-icons-bar div.collapse-search-bar-icon>ul {
   display: flex;
   flex-direction: row;
@@ -170,7 +186,7 @@ div.collapse-search-bar-icon>ul>li:nth-child(2) {
 
 div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
   background-color: #FFBB00;
-}
+} */
 
 
 /*<=<** === MEDIA >=992 CSS === **>=>*/
