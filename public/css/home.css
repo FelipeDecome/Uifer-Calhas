@@ -15,7 +15,7 @@ main h1.main_logo,
 main p.slogan,
 main p.segment {
   text-align: center;
-  color: #FFF;
+  color: var(--color-white);
 }
 
 main h1.main_logo,
@@ -39,7 +39,7 @@ main.main_home div.divider {
   margin: 0 auto;
   width: 40%;
   height: 1px;
-  background-color: #999;
+  background-color: var(--color-gray);
   margin: 20px 0 0;
 }
 
@@ -63,7 +63,7 @@ main.main_home div.see_more .btn {
   animation-delay: 500ms;
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) {
   main.main_home {}
 }
 

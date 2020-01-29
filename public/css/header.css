@@ -8,33 +8,102 @@ body.active::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(17, 17, 17, 0.85);
+  background-color: var(--navbar-back-open-shadow);
 }
 
 header.header {
   position: fixed;
   padding-top: 10px;
   padding-bottom: 10px;
-  display: grid;
-  background: #111;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
+  background: var(--color-black-nav);
 }
 
 header.header-top {
   padding-top: 40px;
-  background: linear-gradient(#111111 0%, transparent 100%);
+  background: linear-gradient(var(--color-black-nav) 0%, transparent 100%);
   animation: navbarEffect ease 1s;
 }
 
-header.header>div {
-  width: 80%;
+/* * <=<** === LOGO CSS === **>=>*/
+
+header.header div.logo {
+  display: flex;
+  align-items: center;
 }
 
-header.header>div.logo {
-  text-align: center;
+/* * <=<** === SEARCH BAR CSS === **>=>*/
+
+header.header div.search-bar {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  right: 0;
+  padding: 20px 0;
+  margin-top: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/*<=<** === NAVBAR CSS === **>=>*/
+div.wrap-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+
+div.wrap-content * {
+  transition: all ease 300ms;
+  color: var(--color-black-text);
+}
+
+div.wrap-content input {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: calc(100% - 2px);
+  border: 1px solid var(--color-gray);
+  border-radius: 3px;
+  text-indent: 10px;
+}
+
+div.wrap-content input:focus {
+  border-color: var(--color-yellow);
+}
+
+div.wrap-content span {
+  position: absolute;
+  left: 10px;
+  pointer-events: none;
+}
+
+div.wrap-content input:focus~span,
+div.wrap-content input:valid~span {
+  opacity: 0;
+}
+
+div.wrap-content i {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  padding: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid var(--color-gray);
+}
+
+div.wrap-content i:hover {
+  color: var(--color-yellow);
+  background-color: var(--color-black-text);
+  border: none;
+}
+
+/* * <=<** === NAVBAR CSS === **>=>*/
 
 nav.navbar {
   position: fixed;
@@ -54,9 +123,9 @@ nav.navbar>ul {
 }
 
 nav.navbar ul li {
-  font-size: 18px;
-  font-weight: 700;
-  color: #FFF;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-white);
   /* margin: 15px 30px; */
   padding: 10px 0;
   text-align: center;
@@ -66,10 +135,10 @@ nav.navbar ul li {
 
 nav.navbar>ul li:hover {
   /* color: #333; */
-  background-color: #FFBB00;
+  background-color: var(--color-yellow);
 }
 
-/*<=<** === COLLAPSE ICONS CSS === **>=>*/
+/* * <=<** === COLLAPSE ICONS CSS === **>=>*/
 
 header.header div.collapse-icons-bar {
   display: flex;
@@ -85,7 +154,7 @@ header.header div.collapse-icons-bar {
   cursor: pointer;
 }
 
-/*<=<** === COLLAPSE MENU ICON CSS === **>=>*/
+/* * <=<** === COLLAPSE MENU ICON CSS === **>=>*/
 
 div.collapse-menu-icon>ul {
   display: flex;
@@ -94,14 +163,14 @@ div.collapse-menu-icon>ul {
 }
 
 div.collapse-menu-icon>ul>li {
-  background-color: #FFF;
+  background-color: var(--color-white);
   transition-property: transform, color;
   transition: ease 300ms;
   margin: 4px 0;
 }
 
 div.collapse-menu-icon:hover ul>li {
-  background-color: #FFBB00;
+  background-color: var(--color-yellow);
 }
 
 div.collapse-menu-icon>ul>li:first-child,
@@ -137,72 +206,30 @@ div.collapse-menu-icon.close>ul>li:nth-child(2) {
   display: none;
 }
 
-/*<=<** === COLLAPSE SEARCH BAR ICON CSS === **>=>*/
+/* * <=<** === COLLAPSE SEARCH BAR ICON CSS === **>=>*/
 
 div.collapse-icons-bar div.collapse-search-bar-icon>i {
   font-size: 20px;
-  color: #FFF;
+  color: var(--color-white);
   transition: all ease 500ms;
 }
 
 div.collapse-icons-bar div.collapse-search-bar-icon>i:hover {
-  color: #FFBB00;
+  color: var(--color-yellow);
 }
 
 div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
-  color: #FFBB00;
+  color: var(--color-yellow);
   transform: rotate(-270deg);
 }
 
-/*
-div.collapse-icons-bar div.collapse-search-bar-icon>ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  transform: rotate(45deg);
-}
-
-div.collapse-search-bar-icon>ul>li {
-  transition: all ease 300ms;
-}
-
-div.collapse-search-bar-icon>ul>li:first-child {
-  width: 16px;
-  height: 16px;
-  border-radius: 10px;
-  border: 2px solid #FFF;
-}
-
-div.collapse-search-bar-icon>ul:hover li:first-child {
-  border-color: #FFBB00;
-}
-
-div.collapse-search-bar-icon>ul>li:nth-child(2) {
-  width: 12px;
-  height: 2px;
-  background-color: #FFF;
-}
-
-div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
-  background-color: #FFBB00;
-} */
-
-
-/*<=<** === MEDIA >=992 CSS === **>=>*/
+/* * <=<** === MEDIA >=992 CSS === **>=>*/
 
 @media (min-width: 992px) {
-  header.header {
-    grid-template-columns: 1fr 2fr 1fr;
-  }
 
-  /* .collapse-icons-bar {
-    grid-column: 3 / 4;
-  } */
-
-  header.header>div.logo {
+  /* header.header>div.logo {
     width: 100%;
-  }
+  } */
 
   nav.navbar {
     position: initial;
@@ -210,6 +237,7 @@ div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    width: initial;
     margin-top: 0;
   }
 
@@ -221,11 +249,11 @@ div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
   nav.navbar>ul li {
     position: relative;
     margin: 0;
-    padding: 10px 15px;
+    padding: 10px 25px;
   }
 
   nav.navbar>ul li:hover {
-    color: #FFBB00;
+    color: var(--color-yellow);
     background-color: transparent;
   }
 
@@ -235,15 +263,16 @@ div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
     height: 100%;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 40%;
     opacity: 0;
-    transition: all ease 300ms;
-    border-bottom: 2px solid #FFBB00;
+    transition: all ease 500ms;
+    border-bottom: 2px solid var(--color-yellow);
   }
 
   nav.navbar>ul li:hover::before,
   nav.navbar>ul li.active::before {
     opacity: 1;
+    left: 0;
     width: 100%;
   }
 
@@ -253,7 +282,7 @@ div.collapse-search-bar-icon>ul:hover li:nth-child(2) {
 
 }
 
-/* VERIFICAR ANIMAÇÃO */
+/* ! VERIFICAR ANIMAÇÃO */
 
 @keyframes navbarEffect {
   10% {

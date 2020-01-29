@@ -4,7 +4,7 @@ footer.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(transparent 0, #111111 100%);
+  background: linear-gradient(transparent 0, var(--color-black-nav) 100%);
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -19,15 +19,15 @@ footer.footer div.copyright p,
 footer.footer div.copyright p span {
   font-family: 'Clarendon', serif;
   font-size: 14px;
-  color: #FFF;
+  color: var(--color-white);
 }
 
 footer.footer div.copyright p span {
-  color: #FFBB00;
+  color: var(--color-yellow);
 }
 
 footer.footer div.copyright i {
   padding: 0 5px 0 0;
   font-size: 18px;
-  color: #FFBB00;
+  color: var(--color-yellow);
 }

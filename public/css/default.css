@@ -5,7 +5,24 @@ Yellow: FFBB00
 Green: 1DC6A7
 */
 
+:root {
+  --color-red: #FF3F3F;
+  --color-blue: #00668C;
+  --color-yellow: #FFBB00;
+  --color-green: #1DC6A7;
+  --color-black-nav: #111;
+  --color-black-text: #333;
+  --color-black-section: #1f1f1f;
+  --color-black-text-section: #2f2f2f;
+  --color-gray: #a9a9a9;
+  --color-white: #FFF;
+
+  --navbar-back-open-shadow: rgba(17, 17, 17, 0.85);
+}
+
+
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 @font-face {
   font-family: Clarendon;
@@ -34,8 +51,9 @@ h3,
 h4,
 h5,
 h6,
-span {
-  font-family: 'Josefin Slab', serif;
+span,
+input {
+  font-family: 'Josefin slab', sans-serif;
 }
 
 html {
@@ -49,7 +67,27 @@ footer {
   width: calc(100vw - 40px);
 }
 
-/* Conteudo Removido
+@media (min-width: 768px) {
+
+  header,
+  main,
+  footer {
+    padding: 0 60px;
+    width: calc(100vw - 120px);
+  }
+}
+
+@media (min-width: 992px) {
+
+  header,
+  main,
+  footer {
+    padding: 0 80px;
+    width: calc(100vw - 160px);
+  }
+}
+
+/* !Conteudo Removido
 .container-flex,
 .container-grid {
   position: relative;
@@ -83,33 +121,29 @@ footer {
 
 */
 
-/*<=<** === DEFAULT CLASSES === **>=>*/
+/* * <=<** === DEFAULT CLASSES === **>=>*/
 .red {
-  color: #FF3F3F;
+  color: var(--color-red);
 }
 
 .blue {
-  color: #00668C;
+  color: var(--color-blue);
 }
 
 .yellow {
-  color: #FFBB00;
+  color: var(--color-yellow);
 }
 
 .green {
-  color: #1DC6A7;
+  color: var(--color-green);
 }
 
 
-/*<=<** === LOGO CSS === **>=>*/
+/* * <=<** === LOGO CSS === **>=>*/
 
 /* .logo {
-  margin: 10px;
-} */
-
-.logo {
   margin: 10px 0;
-}
+} */
 
 .logo span {
   font-family: 'Clarendon BLK BT';
@@ -118,24 +152,24 @@ footer {
 }
 
 .logo>a>span:first-child {
-  color: #FF3F3F;
+  color: var(--color-red);
 }
 
 .logo>a>span:nth-child(2) {
-  color: #00668C;
+  color: var(--color-blue);
 }
 
 .logo span>span,
 .logo:hover a span {
-  color: #FFF;
+  color: var(--color-white);
 }
 
 .logo:hover a span:first-child>span {
-  color: #FF3F3F;
+  color: var(--color-red);
 }
 
 .logo:hover a span:nth-child(2)>span {
-  color: #00668C;
+  color: var(--color-blue);
 }
 
 .btn {
@@ -153,16 +187,16 @@ footer {
 }
 
 .btn-yellow {
-  background: #FFBB00;
+  background: var(--color-yellow);
 }
 
 .btn-yellow:hover {
   background: transparent;
-  border-color: #FFBB00;
+  border-color: var(--color-yellow);
 }
 
 .btn-yellow:hover span {
-  color: #FFBB00;
+  color: var(--color-yellow);
 }
 
 .btn-yellow:hover i {
