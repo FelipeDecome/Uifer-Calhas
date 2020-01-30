@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/67895c6c28.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="active">
 
   <header class="header header-top">
 
@@ -26,11 +26,13 @@
       </a>
     </div>
 
-    <div class="search-bar">
+    <div class="search-bar" id="searchBar">
       <div class="wrap-content">
-        <input type="text" class="textfield" required>
-        <span> O que está procurando? </span>
-        <i class="fas fa-search"></i>
+        <div class="wrap-input">
+          <input type="text" class="textfield" required>
+          <span> O que está procurando? </span>
+          <i class="fas fa-search"></i>
+        </div>
       </div>
     </div>
 
@@ -56,16 +58,11 @@
 
     <div class="collapse-icons-bar">
 
-      <div class="collapse-search-bar-icon">
-        <!-- <ul>
-          <li></li>
-          <li></li>
-        </ul> -->
+      <div class="collapse-search-bar-icon" data-target="#searchBar">
         <i class="fas fa-search"></i>
       </div>
 
       <div class="collapse-menu-icon" data-target="#navbar">
-        <!--TODO: SCRIPT Funcionalidade Collapse Navbar-->
         <ul>
           <li></li>
           <li></li>
@@ -117,6 +114,8 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/footer.css">
+
+  <script src="js/navbar.js"></script>
 
 </body>
 

@@ -37,33 +37,43 @@ header.header div.logo {
 
 header.header div.search-bar {
   position: fixed;
+  display: none;
   width: 100%;
   height: 30px;
   right: 0;
   padding: 20px 0;
   margin-top: 54px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+header.header div.search-bar.collapse {
+  display: initial;
 }
 
 div.wrap-content {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 100%;
 }
 
-div.wrap-content * {
+div.wrap-input {
+  position: relative;
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.wrap-content div * {
   transition: all ease 300ms;
   color: var(--color-black-text);
 }
 
 div.wrap-content input {
+  animation: searchInputAppear ease-in-out 1s;
   padding: 0;
-  position: relative;
   width: 100%;
   height: calc(100% - 2px);
   border: 1px solid var(--color-gray);
@@ -76,6 +86,7 @@ div.wrap-content input:focus {
 }
 
 div.wrap-content span {
+  animation: searchSpanAppear ease 1s;
   position: absolute;
   left: 10px;
   pointer-events: none;
@@ -87,6 +98,7 @@ div.wrap-content input:valid~span {
 }
 
 div.wrap-content i {
+  animation: searchButton ease 2s backwards 800ms;
   position: absolute;
   right: 0px;
   height: 100%;
@@ -94,13 +106,16 @@ div.wrap-content i {
   cursor: pointer;
   display: flex;
   align-items: center;
-  border-left: 1px solid var(--color-gray);
+  color: var(--color-yellow);
+  background-color: var(--color-black-text);
 }
 
 div.wrap-content i:hover {
-  color: var(--color-yellow);
-  background-color: var(--color-black-text);
-  border: none;
+  height: calc(100% - 2px);
+  border-left: 1px solid var(--color-yellow);
+  color: var(--color-black-text);
+  background-color: var(--color-yellow);
+
 }
 
 /* * <=<** === NAVBAR CSS === **>=>*/
@@ -184,25 +199,25 @@ div.collapse-menu-icon>ul>li:nth-child(2) {
   height: 2px;
 }
 
-div.collapse-menu-icon.close>ul {
+div.collapse-menu-icon.active>ul {
   display: block;
 }
 
-div.collapse-menu-icon.close>ul>li {
+div.collapse-menu-icon.active>ul>li {
   margin: 0;
 }
 
-div.collapse-menu-icon.close>ul>li:first-child {
+div.collapse-menu-icon.active>ul>li:first-child {
   transform: translateY(2px) rotate(45deg);
   height: 4px;
 }
 
-div.collapse-menu-icon.close>ul>li:nth-child(3) {
+div.collapse-menu-icon.active>ul>li:nth-child(3) {
   transform: translateY(-2px) rotate(-45deg);
   height: 4px;
 }
 
-div.collapse-menu-icon.close>ul>li:nth-child(2) {
+div.collapse-menu-icon.active>ul>li:nth-child(2) {
   display: none;
 }
 
@@ -283,6 +298,58 @@ div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
 }
 
 /* ! VERIFICAR ANIMAÇÃO */
+
+@keyframes searchButton {
+  from {
+    transform: rotate(720deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  to {
+    opacity: 1;
+
+  }
+}
+
+@keyframes searchSpanAppear {
+  from {
+    margin-left: 100vw;
+  }
+
+  50% {
+    margin-left: -10vw;
+  }
+
+  85% {
+    margin-left: 5vw;
+  }
+
+  to {
+    margin-left: inherit;
+  }
+}
+
+@keyframes searchInputAppear {
+  from {
+    margin-left: -100vw;
+  }
+
+  50% {
+    margin-left: 10vw;
+  }
+
+  85% {
+    margin-left: -5vw;
+  }
+
+  to {
+    margin-left: inherit;
+  }
+}
 
 @keyframes navbarEffect {
   10% {
