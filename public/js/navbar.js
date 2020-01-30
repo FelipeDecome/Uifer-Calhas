@@ -1,48 +1,43 @@
-const buttons = document.querySelectorAll('[data-target]');
+window.onload = function () {
+  //* Pega todos os Botões
+  const buttons = document.querySelectorAll('[data-target]');
 
-for (let i = 0; i < buttons.length; i++) {
+  //* Separa os Botões e joga as 'collapses' em um Array
+  for (let i = 0; i < buttons.length; i++) {
+    const collapses = [];
+    let collapseId = buttons[i].getAttribute('data-target');
+    collapses.push(collapseId);
+    //* Adiciona um event listener de click nos botões
+    buttons[i].addEventListener('click', function () {
 
-  const collapses = [];
-  collapses.push(buttons[i].getAttribute('data-target'));
+      //! JOGAR DENTRO DE OUTRO FOR PRA PODER PEGAR OS 2 ATÉ O FIM DA FUNÇÃO
 
-  //! Pensar melhor nessa parte
-  function removeAllCollapses() {
-    console.log(collapses[i].classList, '1');
-    for (let i = 0; i < collapses.length; i++) {
-      let collapse = document.querySelector(collapses[i]);
-      collapse.classList.remove('collapse');
-      console.log(collapse.classList, '2');
-    }
-  }
-
-  console.log(collapses, '3');
-
-  buttons[i].addEventListener('click', function () {
-    if (!buttons[i].classList.contains('active')) {
-      //* REMOVE TODAS AS CLASSES 'ACTIVE'
-      for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].classList.contains('active')) {
-          buttons[i].classList.remove('active');
+      //* verifica se tem active no botão, se sim remove ele, se não, adciona
+      if (!buttons[i].classList.contains('active')) {
+        //* Remove todos os actives dos botões
+        for (let j = 0; j < buttons.length; j++) {
+          if (buttons[j].classList.contains('active')) {
+            buttons[j].classList.remove('active');
+          }
         }
+        buttons[i].classList.add('active');
+      } else {
+        buttons[i].classList.remove('active');
       }
-      //* ADCIONA O ACTIVE NO BOTÃO CLICADO
-      buttons[i].classList.add('active');
-    } else {
-      //* REMOVE O ACTIVE NO BOTÃO CLICADO
-      buttons[i].classList.remove('active');
-    }
-    /*     if (!buttons[i].classList.contains('active')) {
-          buttons[i].classList.add('active');
-        } */
-    let element = document.querySelector(buttons[i].getAttribute('data-target'));
-    console.log(element.classList, '4');
 
-    if (!element.classList.contains('collapse')) {
-      removeAllCollapses();
-      element.classList.add('collapse');
-    } else {
-      removeAllCollapses();
-      element.classList.remove('collapse');
-    }
-  });
+      for (let x = 0; x < collapses.length; x++) {
+        let element = document.querySelector(collapses[i]);
+        console.log(element, i, collapses);
+      }
+    });
+  }
+};
+
+function removeAllCollapses(collapses) {
+  for (i = 0; i < collapses.length; i++) {
+    let elementId = collapses[i];
+    let element = document.querySelector(elementId);
+
+    console.log(element, i);
+  }
 }
