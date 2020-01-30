@@ -1,95 +1,95 @@
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url('./../images/backgroundBlack.jpg');
-  background-repeat: no-repeat, no-repeat;
-  background-position: center center;
-  background-size: cover;
-  height: 100vh;
-  min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./../images/backgroundBlack.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 600px;
 }
 
 main h1.main_logo,
 main p.slogan,
 main p.segment {
-  text-align: center;
-  color: var(--color-white);
+    text-align: center;
+    color: var(--color-white);
 }
 
 main h1.main_logo,
 main p.slogan {
-  animation: fade ease 3s;
-  animation-fill-mode: backwards;
+    animation: fade ease 3s;
+    animation-fill-mode: backwards;
 }
 
 main h1.main_logo span {
-  font-family: 'Clarendon BLK BT', serif;
-  font-size: 52px;
+    font-family: 'Clarendon BLK BT', serif;
+    font-size: 52px;
 }
 
 main.main_home p.slogan {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 main.main_home div.divider {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-  height: 1px;
-  background-color: var(--color-gray);
-  margin: 20px 0 0;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    height: 1px;
+    background-color: var(--color-gray);
+    margin: 20px 0 0;
 }
 
 main.main_home p.segment,
 main.main_home p.segment span {
-  font-family: 'Clarendon', serif;
-  font-size: 20px;
+    font-family: 'Clarendon', serif;
+    font-size: 20px;
 }
 
 main.main_home p.segment {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 main.main_home div.see_more {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 main.main_home div.see_more .btn {
-  animation: moveUp ease 2s;
-  animation-fill-mode: backwards;
-  animation-delay: 500ms;
+    animation: moveUp ease 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 500ms;
 }
 
 @media (min-width: 576px) {
-  /* main.main_home {} */
+    /* main.main_home {} */
 }
 
 
 @keyframes fade {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes moveUp {
-  from {
-    opacity: 0;
-    margin-top: 50px;
-  }
+    from {
+        opacity: 0;
+        margin-top: 50px;
+    }
 
-  25% {
-    opacity: 1;
-    margin-top: 50px;
-  }
+    25% {
+        opacity: 1;
+        margin-top: 50px;
+    }
 
-  to {
-    margin-top: 0;
-  }
+    to {
+        margin-top: 0;
+    }
 }
