@@ -6,11 +6,19 @@ for (let i = 0; i < navbarALi.length; i++) {
 }
 
 //! Adcionar fade Animation
-function navbarOnClose(navbar) {
-    if (!navbar.clasList.contains('collapse')) {
-        navbar.style.animationName = "fade";
-        navbar.style.animationDuration = "1s";
-        navbar.style.animationDirection = "reverse";
-        navbar.style.animationTimingFunction = "ease";
+function navbarOnClose(element) {
+    if (!element.classList.contains('collapse')) {
+        element.style.animationName = "fade";
+        element.style.animationDuration = "1s";
+        element.style.animationDirection = "reverse";
+        element.style.animationTimingFunction = "ease";
+
+        setTimeout(() => {
+            element.style.animationName = null;
+            element.style.animationDuration = null;
+            element.style.animationDirection = null;
+            element.style.animationTimingFunction = null;
+        }, 1100);
     }
+
 }
