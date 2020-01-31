@@ -9,6 +9,7 @@ body.active::before {
     bottom: 0;
     right: 0;
     background-color: var(--navbar-back-open-shadow);
+    z-index: 1;
 }
 
 header.header {
@@ -18,6 +19,7 @@ header.header {
     display: flex;
     justify-content: space-between;
     background: var(--color-black-nav);
+    z-index: 2;
 }
 
 header.header-top {
@@ -43,6 +45,7 @@ header.header div.search-bar {
     right: 0;
     padding: 20px 0;
     margin-top: 54px;
+    z-index: 3;
 }
 
 header.header div.search-bar.collapse {
@@ -72,7 +75,7 @@ div.wrap-content div * {
 }
 
 div.wrap-content input {
-    animation: searchInputAppear ease-in-out 1s;
+    animation: searchAppearLeft ease-in-out 1s;
     padding: 0;
     width: 100%;
     height: calc(100% - 2px);
@@ -86,7 +89,7 @@ div.wrap-content input:focus {
 }
 
 div.wrap-content span {
-    animation: searchSpanAppear ease 1s;
+    animation: searchAppearRight ease 1s;
     position: absolute;
     left: 10px;
     pointer-events: none;
@@ -98,7 +101,7 @@ div.wrap-content input:valid~span {
 }
 
 div.wrap-content i {
-    animation: searchButton ease 2s backwards 800ms;
+    animation: searchButton ease 1s backwards 800ms;
     position: absolute;
     right: 0px;
     height: 100%;
@@ -126,6 +129,7 @@ nav.navbar {
     width: 100%;
     margin-top: 54px;
     right: 0;
+    z-index: 4;
 }
 
 nav.navbar.collapse {
@@ -140,6 +144,7 @@ nav.navbar>ul {
 nav.navbar ul li {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     color: var(--color-white);
     /* margin: 15px 30px; */
     padding: 10px 0;
@@ -148,8 +153,17 @@ nav.navbar ul li {
     /* cursor: pointer; */
 }
 
-nav.navbar>ul li:hover {
-    /* color: #333; */
+nav.navbar ul a:nth-child(odd) li {
+    animation: searchAppearLeft ease 1s backwards;
+}
+
+nav.navbar ul a:nth-child(even) li {
+    animation: searchAppearRight ease 1s backwards;
+}
+
+nav.navbar>ul li:hover,
+nav.navbar>ul li.active {
+    color: var(--color-black-text);
     background-color: var(--color-yellow);
 }
 
@@ -199,25 +213,25 @@ div.collapse-menu-icon>ul>li:nth-child(2) {
     height: 2px;
 }
 
-div.collapse-menu-icon.active>ul {
+div.collapse-menu-icon[data-state="active"]>ul {
     display: block;
 }
 
-div.collapse-menu-icon.active>ul>li {
+div.collapse-menu-icon[data-state="active"]>ul>li {
     margin: 0;
 }
 
-div.collapse-menu-icon.active>ul>li:first-child {
+div.collapse-menu-icon[data-state="active"]>ul>li:first-child {
     transform: translateY(2px) rotate(45deg);
     height: 4px;
 }
 
-div.collapse-menu-icon.active>ul>li:nth-child(3) {
+div.collapse-menu-icon[data-state="active"]>ul>li:nth-child(3) {
     transform: translateY(-2px) rotate(-45deg);
     height: 4px;
 }
 
-div.collapse-menu-icon.active>ul>li:nth-child(2) {
+div.collapse-menu-icon[data-state="active"]>ul>li:nth-child(2) {
     display: none;
 }
 
@@ -233,7 +247,7 @@ div.collapse-icons-bar div.collapse-search-bar-icon>i:hover {
     color: var(--color-yellow);
 }
 
-div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
+div.collapse-icons-bar div.collapse-search-bar-icon[data-state="active"]>i {
     color: var(--color-yellow);
     transform: rotate(-270deg);
 }
@@ -241,10 +255,6 @@ div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
 /* * <=<** === MEDIA >=992 CSS === **>=>*/
 
 @media (min-width: 992px) {
-
-    /* header.header>div.logo {
-    width: 100%;
-  } */
 
     nav.navbar {
         position: initial;
@@ -267,7 +277,8 @@ div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
         padding: 10px 25px;
     }
 
-    nav.navbar>ul li:hover {
+    nav.navbar>ul li:hover,
+    nav.navbar>ul li.active {
         color: var(--color-yellow);
         background-color: transparent;
     }
@@ -299,14 +310,23 @@ div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
 
 /* ! VERIFICAR ANIMAÇÃO */
 
+/* @keyframes {} */
+
 @keyframes searchButton {
     from {
+        background-color: transparent;
         transform: rotate(720deg);
         opacity: 0;
     }
 
     50% {
+        background-color: transparent;
         transform: rotate(0);
+        color: var(--color-black-text);
+    }
+
+    75% {
+        color: var(--color-white);
     }
 
     to {
@@ -315,9 +335,9 @@ div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
     }
 }
 
-@keyframes searchSpanAppear {
+@keyframes searchAppearRight {
     from {
-        margin-left: 100vw;
+        margin-left: 120vw;
     }
 
     50% {
@@ -333,9 +353,9 @@ div.collapse-icons-bar div.collapse-search-bar-icon.active>i {
     }
 }
 
-@keyframes searchInputAppear {
+@keyframes searchAppearLeft {
     from {
-        margin-left: -100vw;
+        margin-left: -120vw;
     }
 
     50% {
