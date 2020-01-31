@@ -8,9 +8,9 @@ for (let i = 0; i < navbarALi.length; i++) {
 //! Adcionar fade Animation
 function navbarOnClose(navbar) {
     if (!navbar.clasList.contains('collapse')) {
-        navbar.style.animationName = "";
-        navbar.style.animationDuration = "";
-        navbar.style.animation = "";
-        navbar.style.animationName = "";
+        navbar.style.animationName = "fade";
+        navbar.style.animationDuration = "1s";
+        navbar.style.animationDirection = "reverse";
+        navbar.style.animationTimingFunction = "ease";
     }
 }

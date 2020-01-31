@@ -27,6 +27,7 @@ window.onload = function () {
                 element.classList.add('collapse');
             } else {
                 element.classList.remove('collapse');
+                navbarOnClose();
             }
 
             verifyBackCollapse();

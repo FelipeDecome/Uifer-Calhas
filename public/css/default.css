@@ -202,3 +202,15 @@ footer {
 .btn-yellow:hover i {
     color: #FFF;
 }
+
+/*E: default Animations */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -67,17 +67,6 @@ main.main_home div.see_more .btn {
     /* main.main_home {} */
 }
 
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes moveUp {
     from {
         opacity: 0;
