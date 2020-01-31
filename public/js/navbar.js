@@ -30,10 +30,27 @@ window.onload = function () {
             }
 
             verifyBackCollapse();
-
         });
     }
 };
+
+//* Remove as classes Collapse / Active dos elementos que mudam dps de 992px
+window.onresize = function () {
+    if (window.innerWidth > 992) {
+        let buttons = document.querySelectorAll('[data-target]');
+        buttons.forEach(button => {
+            let collapseId = button.getAttribute('data-target');
+            let collapse = document.querySelector(collapseId);
+
+            if (collapseId == '#navbar' && button.getAttribute('data-state') == 'active') {
+                button.removeAttribute('data-state');
+                collapse.classList.remove('collapse');
+
+                verifyBackCollapse();
+            }
+        });
+    }
+}
 
 function verifyBackCollapse() {
     const body = document.querySelector('body');
