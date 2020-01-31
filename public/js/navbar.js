@@ -1,18 +1,18 @@
 window.onload = function () {
-    //* Pega todos os Botões
+    //E: Pega todos os Botões
     const buttons = document.querySelectorAll('[data-target]');
 
-    //* Separa os Botões e joga as 'collapses' em um Array
+    //E: Separa os Botões e joga as 'collapses' em um Array
     for (let i = 0; i < buttons.length; i++) {
         let collapseId = buttons[i].getAttribute('data-target');
         const collapse = collapseId;
 
-        //* Adiciona um event listener de click nos botões
+        //E: Adiciona um event listener de click nos botões
         buttons[i].addEventListener('click', function () {
 
-            //* verifica se tem active no botão, se sim remove ele, se não, adciona
+            //E: verifica se tem active no botão, se sim remove ele, se não, adciona
             if (buttons[i].getAttribute('data-state') != 'active') {
-                //* Remove todos os actives dos botões
+                //E: Remove todos os actives dos botões
                 removeAllActives(buttons);
 
                 buttons[i].setAttribute('data-state', 'active');
@@ -34,7 +34,7 @@ window.onload = function () {
     }
 };
 
-//* Remove as classes Collapse / Active dos elementos que mudam dps de 992px
+//E: Remove as classes Collapse / Active dos elementos que mudam dps de 992px
 window.onresize = function () {
     if (window.innerWidth > 992) {
         let buttons = document.querySelectorAll('[data-target]');
