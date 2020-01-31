@@ -87,40 +87,6 @@ footer {
     }
 }
 
-/* !Conteudo Removido
-.container-flex,
-.container-grid {
-  position: relative;
-  padding: 0 20px;
-  width: 100%;
-}
-
-.container-flex {
-  display: flex;
-}
-
-.container-grid {
-  display: grid;
-}
-
-.container-grid .column {
-    padding: 20px 10px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.container-flex .row {
-  width: 100%;
-}
-
-*/
-
 /* * <=<** === DEFAULT CLASSES === **>=>*/
 .red {
     color: var(--color-red);
@@ -140,10 +106,6 @@ footer {
 
 
 /* * <=<** === LOGO CSS === **>=>*/
-
-/* .logo {
-  margin: 10px 0;
-} */
 
 .logo span {
     font-family: 'Clarendon BLK BT';
