@@ -3,12 +3,27 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('./../images/backgroundBlack.jpg');
+    background-image: url('./../images/backgrounds/background-768.jpg');
     background-repeat: no-repeat, no-repeat;
     background-position: center center;
     background-size: cover;
     height: 100vh;
     min-height: 600px;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--navbar-back-open-shadow);
+}
+
+main * {
+    z-index: 1;
 }
 
 main h1.main_logo,
@@ -63,9 +78,31 @@ main.main_home div.see_more .btn {
     animation-delay: 500ms;
 }
 
-@media (min-width: 576px) {
-    /* main.main_home {} */
+@media (min-width: 768px) {
+
+    main {
+        background-image: url('./../images/backgrounds/background-1200.jpg');
+    }
+
 }
+
+@media (min-width: 992px) {
+
+    main {
+        background-image: url('./../images/backgrounds/background-1440.jpg');
+    }
+
+}
+
+
+@media (min-width: 1440px) {
+
+    main {
+        background-image: url('./../images/backgrounds/background-1920.jpg');
+    }
+
+}
+
 
 @keyframes moveUp {
     from {

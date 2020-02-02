@@ -9,7 +9,7 @@ body.active::before {
     bottom: 0;
     right: 0;
     background-color: var(--navbar-back-open-shadow);
-    z-index: 1;
+    z-index: 2;
 }
 
 header.header {
@@ -19,7 +19,7 @@ header.header {
     display: flex;
     justify-content: space-between;
     background: var(--color-black-nav);
-    z-index: 2;
+    z-index: 3;
 }
 
 header.header-top {
@@ -45,7 +45,7 @@ header.header div.search-bar {
     right: 0;
     padding: 20px 0;
     margin-top: 54px;
-    z-index: 3;
+    z-index: 4;
 }
 
 header.header div.search-bar.collapse {
@@ -111,6 +111,7 @@ div.wrap-content i {
     align-items: center;
     color: var(--color-yellow);
     background-color: var(--color-black-text);
+    border-radius: 0 3px 3px 0;
 }
 
 div.wrap-content i:hover {
@@ -129,7 +130,7 @@ nav.navbar {
     width: 100%;
     margin-top: 54px;
     right: 0;
-    z-index: 4;
+    z-index: 5;
 }
 
 nav.navbar.collapse {
@@ -256,6 +257,14 @@ div.collapse-icons-bar div.collapse-search-bar-icon[data-state="active"]>i {
 
 @media (min-width: 992px) {
 
+    /* * <=<** === Search bar CSS === **>=>*/
+
+    div.wrap-input {
+        width: 40%;
+    }
+
+    /* * <=<** === NAVBAR CSS === **>=>*/
+
     nav.navbar {
         position: initial;
         display: flex;
@@ -304,6 +313,16 @@ div.collapse-icons-bar div.collapse-search-bar-icon[data-state="active"]>i {
 
     div.collapse-icons-bar div.collapse-menu-icon {
         display: none;
+    }
+
+}
+
+@media (min-width: 1440px) {
+
+    /* * <=<** === Search bar CSS === **>=>*/
+
+    div.wrap-input {
+        width: 25%;
     }
 
 }
