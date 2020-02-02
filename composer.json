@@ -6,10 +6,13 @@
         "twbs/bootstrap": "^4.4",
         "components/jquery": "^3.4"
     },
-    "authors": [
-        {
-            "name": "FelipeDecome",
-            "email": "felipe.decome@hotmail.com"
+    "authors": [{
+        "name": "FelipeDecome",
+        "email": "felipe.decome@hotmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Uifer\\System\\": "src/"
         }
-    ]
+    }
 }
