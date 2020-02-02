@@ -101,7 +101,7 @@ div.wrap-content input:valid~span {
 }
 
 div.wrap-content i {
-    animation: searchButton ease 1s backwards 800ms;
+    animation: searchButton ease 500ms backwards 800ms;
     position: absolute;
     right: 0px;
     height: 100%;
@@ -153,11 +153,11 @@ nav.navbar ul li {
     /* cursor: pointer; */
 }
 
-nav.navbar ul a:nth-child(odd) li {
+nav.navbar.collapse ul a:nth-child(odd) li {
     animation: searchAppearLeft ease 1s backwards;
 }
 
-nav.navbar ul a:nth-child(even) li {
+nav.navbar.collapse ul a:nth-child(even) li {
     animation: searchAppearRight ease 1s backwards;
 }
 
@@ -345,7 +345,7 @@ div.collapse-icons-bar div.collapse-search-bar-icon[data-state="active"]>i {
     }
 
     85% {
-        margin-left: 5vw;
+        margin-left: 0vw;
     }
 
     to {
@@ -363,7 +363,7 @@ div.collapse-icons-bar div.collapse-search-bar-icon[data-state="active"]>i {
     }
 
     85% {
-        margin-left: -5vw;
+        margin-left: 0vw;
     }
 
     to {
