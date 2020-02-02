@@ -20,7 +20,7 @@ main p.segment {
 
 main h1.main_logo,
 main p.slogan {
-    animation: fade ease 3s;
+    animation: fade ease 1500ms;
     animation-fill-mode: backwards;
 }
 
@@ -58,7 +58,7 @@ main.main_home div.see_more {
 }
 
 main.main_home div.see_more .btn {
-    animation: moveUp ease 2s;
+    animation: moveUp ease 800ms;
     animation-fill-mode: backwards;
     animation-delay: 500ms;
 }

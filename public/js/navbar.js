@@ -54,8 +54,9 @@ window.onresize = function () {
 }
 
 function verifyBackCollapse() {
-    const body = document.querySelector('body');
+    let body = document.querySelector('body');
     let elements = document.querySelectorAll(".collapse");
+    let buttons = document.querySelectorAll('[data-state]');
 
     if (elements.length) {
         if (!body.classList.contains('active')) {
@@ -63,6 +64,18 @@ function verifyBackCollapse() {
         }
     } else {
         body.classList.remove('active');
+    }
+
+    //* Fechas os Collapses caso clique fora deles
+    if (body.classList.contains('active')) {
+        body.addEventListener('click', function (e) {
+            if (event.target == body) {
+                removeAllActives(buttons);
+                removeAllCollapses(buttons);
+
+                verifyBackCollapse();
+            }
+        });
     }
 }
 
