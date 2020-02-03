@@ -1,6 +1,6 @@
 <?php
 
-namespace Uifer\System\Passwords;
+namespace Uifer\System\Controller\Passwords;
 
 class Passwords
 {
@@ -8,9 +8,6 @@ class Passwords
     public $pass;
 
     private $salt;
-
-    public function generateSalt(): string
-    {}
 
     final public function combinePassSalt(): string
     {
@@ -29,14 +26,12 @@ class Passwords
     public function hashPass(string $passSalt): string
     {}
 
-    public function getPass(): string
+    final public function generateSalt(): Passwords
     {
-        return $this->pass;
-    }
+        $date = date("d-m-Y H:i");
+        $result = \md5($date);
 
-    public function setPass($pass): Passwords
-    {
-        $this->pass = $pass;
+        $this->salt = $result;
 
         return $this;
     }
@@ -46,10 +41,16 @@ class Passwords
         return $this->salt;
     }
 
-    public function setSalt($salt): Passwords
+    public function setPass($pass): Passwords
     {
-        $this->salt = $salt;
+        $this->pass = $pass;
 
         return $this;
     }
+
+    public function getPass(): string
+    {
+        return $this->pass;
+    }
+
 }

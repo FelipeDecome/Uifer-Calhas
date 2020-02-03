@@ -8,7 +8,6 @@ $teste = new Passwords();
 
 $sla = $teste
     ->setPass('96578396')
-    ->setSalt('abcdefg')
     ->combinePassSalt();
 
 var_dump($sla);
