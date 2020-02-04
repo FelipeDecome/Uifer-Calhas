@@ -31,7 +31,7 @@ define('PATH_IMG', PATH_PUBLIC . 'images/');
  *
  */
 
-define('HASH_SALT', '');
+define('HASH_OPTIONS', ['cost' => 10]);
 
 /**
  *
