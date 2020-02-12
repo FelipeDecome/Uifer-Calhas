@@ -6,23 +6,22 @@ Green: 1DC6A7
 */
 
 :root {
-    --color-red: #FF3F3F;
-    --color-blue: #00668C;
-    --color-yellow: #FFBB00;
-    --color-green: #1DC6A7;
+    --color-red: #ff3f3f;
+    --color-blue: #00668c;
+    --color-yellow: #ffbb00;
+    --color-green: #1dc6a7;
     --color-black-nav: #111;
     --color-black-text: #333;
     --color-black-section: #1f1f1f;
     --color-black-text-section: #2f2f2f;
     --color-gray: #a9a9a9;
-    --color-white: #FFF;
+    --color-white: #fff;
 
-    --navbar-back-open-shadow: rgba(17, 17, 17, 0.85);
+    --navbar-back-open-shadow: rgba(17, 17, 17, 0.95);
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 @font-face {
     font-family: Clarendon;
@@ -53,7 +52,7 @@ h5,
 h6,
 span,
 input {
-    font-family: 'Josefin Slab', sans-serif;
+    font-family: "Josefin Slab", sans-serif;
 }
 
 html {
@@ -68,7 +67,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-
     header,
     main,
     footer {
@@ -78,7 +76,6 @@ footer {
 }
 
 @media (min-width: 992px) {
-
     header,
     main,
     footer {
@@ -104,33 +101,32 @@ footer {
     color: var(--color-green);
 }
 
-
 /* * <=<** === LOGO CSS === **>=>*/
 
 .logo span {
-    font-family: 'Clarendon BLK BT';
+    font-family: "Clarendon BLK BT";
     font-size: 24px;
     transition: all ease 500ms;
 }
 
-.logo>a>span:first-child {
+.logo > a > span:first-child {
     color: var(--color-red);
 }
 
-.logo>a>span:nth-child(2) {
+.logo > a > span:nth-child(2) {
     color: var(--color-blue);
 }
 
-.logo span>span,
+.logo span > span,
 .logo:hover a span {
     color: var(--color-white);
 }
 
-.logo:hover a span:first-child>span {
+.logo:hover a span:first-child > span {
     color: var(--color-red);
 }
 
-.logo:hover a span:nth-child(2)>span {
+.logo:hover a span:nth-child(2) > span {
     color: var(--color-blue);
 }
 
@@ -144,7 +140,7 @@ footer {
 }
 
 .btn span {
-    font-family: 'Clarendon BLK BT', serif;
+    font-family: "Clarendon BLK BT", serif;
     font-size: 16px;
 }
 
@@ -162,7 +158,7 @@ footer {
 }
 
 .btn-yellow:hover i {
-    color: #FFF;
+    color: #fff;
 }
 
 /*E: default Animations */
