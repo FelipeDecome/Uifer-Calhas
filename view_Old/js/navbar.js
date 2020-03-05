@@ -66,7 +66,7 @@ function verifyBackCollapse() {
         body.classList.remove('active');
     }
 
-    //* Fechas os Collapses caso clique fora deles
+    //* Fecha os Collapses caso clique fora deles
     if (body.classList.contains('active')) {
         body.addEventListener('click', function (e) {
             if (event.target == body) {
