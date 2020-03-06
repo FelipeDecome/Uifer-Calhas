@@ -1,0 +1,16 @@
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./header/main.scss";
+
+@font-face {
+    src: url("./../fonts/clarendon.otf");
+    font-weight: 400;
+    font-family: Clarendon;
+}
+
+@font-face {
+    src: url("./../fonts/clarendon-black-bt.ttf");
+    font-weight: bold;
+    font-family: Clarendon;
+}

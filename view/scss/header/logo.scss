@@ -1,0 +1,46 @@
+/* Logo Section */
+
+.logo_wrapper {
+    height: 35px;
+    cursor: pointer;
+
+    &:hover {
+        & .logo svg path {
+            &.path_1 {
+                fill: $blue;
+            }
+
+            &.path_2 {
+                fill: $red;
+            }
+        }
+        & span {
+            @include textBorder($red);
+        }
+    }
+}
+
+.logo svg {
+    width: auto;
+    height: 100%;
+
+    & path {
+        fill: $blackText;
+
+        &.path_1 {
+            fill: white;
+        }
+    }
+}
+
+.logo + span {
+    position: relative;
+    left: -35px;
+    bottom: 5px;
+    width: 100%;
+    font-family: Clarendon;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 0 5px;
+    color: white;
+}

@@ -1,0 +1,14 @@
+header {
+    z-index: 1;
+    @include flex(100%, space-between);
+    @include prefixValue(background, linear-gradient($black, transparent));
+    padding: 30px 30px 10px;
+}
+
+/* @media (min-width: $sm) and (max-width: '#{$md - 1}px') {
+    header {
+    }
+} */
+
+@import "./logo.scss";
+@import "./navbar.scss";
