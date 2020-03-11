@@ -2,8 +2,9 @@
 <header>
     <div class="container row">
         <div class="logo_wrapper">
-            <i class="logo"> <?php include_once './images/logo.svg';?> </i>
-            <span>Uifer Calhas</span>
+            <?php include "./components/logo.php";?>
         </div>
+        <div class="navbar-wrapper"></div>
+        <div class="icons-wrapper"></div>
     </div>
 </header>

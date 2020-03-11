@@ -1,7 +1,18 @@
 @import "./reset.scss";
 @import "./variables.scss";
 @import "./mixins.scss";
+
+.container {
+    @include flex(100%, space-between);
+}
+
+.column {
+    flex-direction: column;
+}
+
 @import "./header/main.scss";
+@import "./home/main.scss";
+
 
 @font-face {
     src: url("./../fonts/clarendon.otf");
