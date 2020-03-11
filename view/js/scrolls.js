@@ -7,36 +7,30 @@ function createListener() {
     verifyScrollPos()
     document.addEventListener('scroll', (e) => {
         verifyScrollPos()
+        verifyHeader()
     });
 }
 
-function headerAnimationListener() {
+function verifyHeader() {
+    let sPos = window.scrollY
 
-    header.addEventListener('webkitAnimationEnd', e => {
-        if (document.documentElement.classList.contains('header-top')) {
-            toggleClass(header, null, 'showing')
+    if (sPos < header.offsetHeight && docElem.classList.contains("header-top")) {
+        if (sPos <= header.offsetHeight) {
+            let value = - header.offsetHeight + sPos
+            console.log(value)
+            header.style.top = `${value}px`
         }
-
-        if (header.classList.contains('hiding')) {
-            toggleClass(header, 'hiding', 'showing')
-        }
-    });
+    }
 }
 
 function verifyScrollPos() {
     let sPos = window.scrollY
 
-    // console.log(sPos);
-
     if (sPos > 0) {
-        docElem.classList.remove("header-top")
-        header.classList.remove('showing')
-        header.classList.add('hiding')
+        toggleClass(docElem, "header-top", "scroll")
 
     } else if (sPos === 0) {
-        docElem.classList.add("header-top")
-        header.classList.remove('hiding')
-        header.classList.add('showing')
+        toggleClass(docElem, "scroll", "header-top")
     }
 }
 
