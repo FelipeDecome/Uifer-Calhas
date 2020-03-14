@@ -1,120 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+        <!-- * FONT AWESOME -->
+        <script
+            src="https://kit.fontawesome.com/67895c6c28.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-    <!-- * FONT AWESOME -->
-    <script src="https://kit.fontawesome.com/67895c6c28.js" crossorigin="anonymous"></script>
-</head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <a href="#">
+                    <span> <span>U</span>ifer </span>
+                    <span> <span>C</span>alhas </span>
+                </a>
+            </div>
 
-<body>
-    <header class="header">
-        <div class="logo">
-            <a href="#">
-                <span> <span>U</span>ifer </span>
-                <span> <span>C</span>alhas </span>
-            </a>
-        </div>
-
-        <div class="search-bar" id="searchBar">
-            <div class="wrap-content">
-                <div class="wrap-input">
-                    <input type="text" class="textfield" required />
-                    <span> O que está procurando? </span>
-                    <i class="fas fa-search"></i>
+            <div class="search-bar" id="searchBar">
+                <div class="wrap-content">
+                    <div class="wrap-input">
+                        <input type="text" class="textfield" required />
+                        <span> O que está procurando? </span>
+                        <i class="fas fa-search"></i>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <nav class="navbar" id="navbar">
-            <ul>
-                <a href="#">
-                    <li class="active">Home</li>
-                </a>
-                <a href="#">
-                    <li>Sobre</li>
-                </a>
-                <a href="#">
-                    <li>Portifólio</li>
-                </a>
-                <a href="#">
-                    <li>Parceiros</li>
-                </a>
-                <a href="#">
-                    <li>Contato</li>
-                </a>
-            </ul>
-        </nav>
-
-        <div class="collapse-icons-bar">
-            <div class="collapse-search-bar-icon" data-target="#searchBar">
-                <i class="fas fa-search"></i>
-            </div>
-
-            <div class="collapse-menu-icon" data-target="#navbar">
+            <nav class="navbar" id="navbar">
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <a href="#">
+                        <li class="active">Home</li>
+                    </a>
+                    <a href="#">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="#">
+                        <li>Portifólio</li>
+                    </a>
+                    <a href="#">
+                        <li>Parceiros</li>
+                    </a>
+                    <a href="#">
+                        <li>Contato</li>
+                    </a>
                 </ul>
+            </nav>
+
+            <div class="collapse-icons-bar">
+                <div class="collapse-search-bar-icon" data-target="#searchBar">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <div class="collapse-menu-icon" data-target="#navbar">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- * MAIN SECTION -->
-    <main class="main_home">
-        <h1 class="main_logo">
-            <span><span class="red">U</span>ifer
-                <span class="blue">C</span>alhas</span>
-        </h1>
-        <p class="slogan">
-            "Qualidade é o nosso diferencial, pontualidade o nosso
-            compromisso."
-        </p>
-        <div class="divider"></div>
-        <p class="segment">
-            <span class="red">Artesanato</span>
-            -
-            <span class="yellow">Calhas</span>
-            -
-            <span class="blue">Funilaria</span>
-            <span class="blue">Industrial</span>
-            -
-            <span class="green">Serviços</span> &
-            <span class="green">Manutenções</span>.
-        </p>
-        <div class="see_more">
-            <button class="btn btn-yellow">
-                <span>Saiba Mais</span>
-                <i class="fas fa-plus"></i>
-            </button>
-        </div>
-    </main>
-
-    <!-- * FOOTER SECTION -->
-    <footer class="footer">
-        <div class="copyright">
-            <i class="far fa-copyright"></i>
-            <p>
-                Todos os direitos reservados à
-                <span>Fernando Decome LTDA ME.</span>
+        <!-- * MAIN SECTION -->
+        <main class="main_home">
+            <h1 class="main_logo">
+                <span
+                    ><span class="red">U</span>ifer
+                    <span class="blue">C</span>alhas</span
+                >
+            </h1>
+            <p class="slogan">
+                "Qualidade é o nosso diferencial, pontualidade o nosso
+                compromisso."
             </p>
-        </div>
-    </footer>
+            <div class="divider"></div>
+            <p class="segment">
+                <span class="red">Artesanato</span>
+                -
+                <span class="yellow">Calhas</span>
+                -
+                <span class="blue">Funilaria</span>
+                <span class="blue">Industrial</span>
+                -
+                <span class="green">Serviços</span> &
+                <span class="green">Manutenções</span>.
+            </p>
+            <div class="see_more">
+                <button class="btn btn-yellow">
+                    <span>Saiba Mais</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </main>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/default.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+        <!-- * FOOTER SECTION -->
+        <footer class="footer">
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <p>
+                    Todos os direitos reservados à
+                    <span>Fernando Decome LTDA ME.</span>
+                </p>
+            </div>
+        </footer>
 
-    <script src="js/scrolls.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/animations.js"></script>
-</body>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/default.css" />
+        <link rel="stylesheet" href="css/header.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/footer.css" />
 
+        <script src="js/utils.js"></script>
+        <script src="js/scrolls.js"></script>
+        <script src="js/navbar.js"></script>
+    </body>
 </html>
