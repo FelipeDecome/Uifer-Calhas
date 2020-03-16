@@ -18,12 +18,14 @@ define('DB_CHARSET', 'utf8');
  *
  */
 
-define('PATH_ROOT', __DIR__ . '/');
+define('PATH_ROOT', "./");
 define('PATH_PUBLIC', PATH_ROOT . 'public/');
 define('PATH_VIEW', PATH_ROOT . 'view/');
-define('PATH_CSS', PATH_PUBLIC . 'css/');
-define('PATH_JS', PATH_PUBLIC . 'js/');
-define('PATH_IMG', PATH_PUBLIC . 'images/');
+define('PATH_COMPONENTS', PATH_VIEW . 'components/');
+define('PATH_COMPONENTS_CSS', PATH_COMPONENTS . 'css/');
+define('PATH_CSS', PATH_VIEW . 'css/');
+define('PATH_JS', PATH_VIEW . 'js/');
+define('PATH_IMG', PATH_VIEW . 'images/');
 
 /**
  *

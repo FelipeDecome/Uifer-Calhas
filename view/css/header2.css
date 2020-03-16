@@ -1,0 +1,13 @@
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.header-top header.header {
+    padding-top: 40px;
+}
