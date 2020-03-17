@@ -1,25 +1,61 @@
-.search-bar .__wrapper {
-    position: relative;
-    height: 25px;
+.search-bar {
+    position: absolute;
+    left: 0;
+    bottom: -65px;
+    width: 100%;
+    padding: 30px 0 10px;
 }
 
-.search-bar .__search-field {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
+.search-bar .__wrapper {
+    position: relative;
+    width: 80%;
+    height: 25px;
     color: var(--color-gray);
 }
+
 
 .search-bar .__wrapper::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    top: 1px;
+    left: 1px;
     border-radius: 3px;
     border: 1px solid var(--color-gray);
     clip-path: inset(90% 0 0 0);
+}
 
+.search-bar input.__search-field,
+.search-bar span.__placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    text-indent: 10px;
+}
+
+.search-bar input.__search-field {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* .search-bar input.__search-field:valid+span.__placeholder, */
+.search-bar input.__search-field:focus+span.__placeholder {
+    display: none;
+}
+
+.search-bar span.__placeholder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* bottom: -4px; */
+    line-height: 1.9;
+    left: 0;
+    pointer-events: none;
+}
+
+.search-bar i.__icon {
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
 }

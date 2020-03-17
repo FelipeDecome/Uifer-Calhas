@@ -1,4 +1,5 @@
 header.header {
+    position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
     background: var(--color-black-nav);
@@ -10,4 +11,23 @@ html.header-top header.header {
     background: -moz-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
     background: -o-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
     background: linear-gradient(var(--color-black-nav) 0%, transparent 100%);
+}
+
+/* <<= Define o tamanho do logo =>> */
+header.header .logo a svg {
+    width: 60px;
+}
+
+header.header .logo a .__text span {
+    font-size: 20px;
+}
+
+header.header .logo a .__text {
+    display: flex;
+    margin-left: -35px;
+    margin-bottom: -5px;
+}
+
+.navbar {
+    display: none;
 }

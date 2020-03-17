@@ -17,9 +17,9 @@ require_once __DIR__ . "./config.php";
 
 <body>
 
-
     <?php include_once "./view/pages/header.php";?>
 
+    <script src="https://kit.fontawesome.com/67895c6c28.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
