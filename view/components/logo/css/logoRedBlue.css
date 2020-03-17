@@ -1,0 +1,56 @@
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo a svg path,
+.logo span {
+    transition: all 500ms ease;
+}
+
+.logo a svg {
+    width: 70px;
+}
+
+.logo a .__text {
+    display: flex;
+    margin-left: -40px;
+    margin-bottom: -8px;
+}
+
+.logo a .__text span {
+    display: block;
+    font-size: 24px;
+    color: var(--color-white);
+}
+
+.logo a .__text span:first-child::first-letter,
+.logo:hover a .__text span:first-child {
+    color: var(--color-red);
+}
+
+.logo a .__text span:nth-child(2)::first-letter,
+.logo:hover a .__text span:nth-child(2) {
+    color: var(--color-blue);
+}
+
+.logo:hover a .__text span::first-letter,
+.logo a .__text span::first-letter {
+    color: var(--color-white);
+}
+
+.logo a svg path:first-child {
+    fill: var(--color-black-text);
+}
+
+.logo a svg path:nth-child(2) {
+    fill: var(--color-white);
+}
+
+.logo:hover a svg path:first-child {
+    fill: var(--color-blue);
+}
+
+.logo:hover a svg path:nth-child(2) {
+    fill: var(--color-red);
+}

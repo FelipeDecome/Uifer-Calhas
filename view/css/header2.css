@@ -1,13 +1,13 @@
 header.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 10px;
-    padding-right: 10px;
     padding-bottom: 10px;
-    padding-left: 10px;
+    background: var(--color-black-nav);
 }
 
-.header-top header.header {
+html.header-top header.header {
     padding-top: 40px;
+    background: -webkit-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
+    background: -moz-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
+    background: -o-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
+    background: linear-gradient(var(--color-black-nav) 0%, transparent 100%);
 }
