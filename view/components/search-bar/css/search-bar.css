@@ -1,14 +1,9 @@
 .search-bar {
     position: absolute;
-    display: none;
     left: 0;
     bottom: -75px;
     width: 100%;
     padding: 30px 0 10px;
-}
-
-.search-bar[data-state="shown"] {
-    display: inherit;
 }
 
 .search-bar * {
@@ -23,17 +18,25 @@
 
 @media (min-width: 768px) {
     .search-bar .__wrapper {
-        position: relative;
         width: 50%;
-        height: 35px;
+    }
+}
+
+@media (min-width: 992px) {
+    .search-bar .__wrapper {
+        width: 40%;
     }
 }
 
 @media (min-width: 1200px) {
     .search-bar .__wrapper {
-        position: relative;
         width: 30%;
-        height: 35px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .search-bar .__wrapper {
+        width: 30%;
     }
 }
 
@@ -89,37 +92,71 @@
     background: var(--color-black-text);
 }
 
-.search-bar input:focus ~ span.__field-border {
+.search-bar input:focus~span.__field-border {
     width: calc(100% - 6px);
     height: calc(100% - 6px);
     border: 3px solid var(--color-yellow);
     animation: clip-path 500ms ease forwards;
 }
 
-.search-bar input.__search-field:valid ~ span.__placeholder,
-.search-bar input.__search-field:focus ~ span.__placeholder {
+.search-bar input.__search-field:valid~span.__placeholder,
+.search-bar input.__search-field:focus~span.__placeholder {
     visibility: hidden;
 }
 
-.search-bar input:focus ~ i.__icon {
+.search-bar input:focus~i.__icon {
     border: none;
 }
 
-.search-bar input:focus ~ i:hover.__icon {
+.search-bar input:focus~i:hover.__icon {
     background: transparent;
+}
+
+.search-bar[data-state="shown"] {
+    pointer-events: all;
+    animation: fade 1s ease backwards;
+}
+
+.search-bar[data-state="shown"] i.__icon {
+    animation: rotate 1s ease;
+}
+
+.search-bar[data-state="hidden"] {
+    animation: fade 1s ease reverse forwards;
+    pointer-events: none;
+}
+
+.search-bar[data-state="hidden"] i.__icon {
+    animation: rotate 1s ease reverse;
 }
 
 @keyframes clip-path {
     0% {
         clip-path: inset(0 30% 80% 30%);
     }
+
     15% {
         clip-path: inset(0 0 80% 0);
     }
+
     40% {
         clip-path: inset(0 0 25% 0);
     }
+
     to {
         clip-path: inset(75% 0 0 0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(720deg);
+        border-color: transparent;
+    }
+
+    to {
+        transform: rotate(0);
+        border-color: transparent;
+
     }
 }
