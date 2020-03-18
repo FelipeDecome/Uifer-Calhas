@@ -11,8 +11,14 @@
     --color-white: #fff;
 
     --navbar-back-open-shadow: rgba(17, 17, 17, 0.95);
-}
 
+    --phone-max: 767px;
+    --tablet-min: 768px;
+    --tablet-max: 991px;
+    --desktop-min: 992px;
+    --desktop-max: 1199px;
+    --desktop-larger: 1200px;
+}
 
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");

@@ -7,8 +7,14 @@ header.header {
 
 html.header-top header.header {
     padding-top: 40px;
-    background: -webkit-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
-    background: -moz-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
+    background: -webkit-linear-gradient(
+        var(--color-black-nav) 0%,
+        transparent 100%
+    );
+    background: -moz-linear-gradient(
+        var(--color-black-nav) 0%,
+        transparent 100%
+    );
     background: -o-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
     background: linear-gradient(var(--color-black-nav) 0%, transparent 100%);
 }
