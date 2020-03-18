@@ -1,0 +1,22 @@
+.navbar {
+    display: none;
+}
+
+.navbar__list {}
+
+
+.navbar[data-state="showed"] {
+    display: block;
+}
+
+.navbar[data-state="showing"] {
+    display: block;
+}
+
+.navbar[data-state="hidding"] {
+    display: block;
+}
+
+.navbar[data-state="hidded"] {
+    display: block;
+}

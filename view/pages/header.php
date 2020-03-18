@@ -7,25 +7,7 @@
 
         <?php include PATH_COMPONENTS . "search-bar/search-bar.php"?>
 
-        <nav class="navbar" id="navbar">
-            <ul>
-                <a href="#">
-                    <li class="active">Home</li>
-                </a>
-                <a href="#">
-                    <li>Sobre</li>
-                </a>
-                <a href="#">
-                    <li>Portifólio</li>
-                </a>
-                <a href="#">
-                    <li>Parceiros</li>
-                </a>
-                <a href="#">
-                    <li>Contato</li>
-                </a>
-            </ul>
-        </nav>
+        <?php include PATH_COMPONENTS . "navbar/navbar.php"?>
 
         <div class="collapse-icons-bar">
             <div class="collapse-search-bar-icon" data-target="#searchBar">
