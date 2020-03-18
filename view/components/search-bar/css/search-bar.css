@@ -83,6 +83,7 @@
     border-left: 1px solid var(--color-gray);
 }
 
+/* <<= Pseudo Classes =>> */
 .search-bar input:focus,
 .search-bar i.__icon:hover {
     color: var(--color-yellow);
@@ -92,47 +93,72 @@
     background: var(--color-black-text);
 }
 
-.search-bar input:focus~span.__field-border {
+.search-bar input.__search-field:focus~span.__field-border {
+    animation: clip-path 500ms ease forwards;
+}
+
+.search-bar input.__search-field:valid~span.__field-border {
+    animation: none;
+    clip-path: inset(75% 0 0 0);
     width: calc(100% - 6px);
     height: calc(100% - 6px);
-    border: 3px solid var(--color-yellow);
-    animation: clip-path 500ms ease forwards;
+    border: 3px solid var(--color-gray);
+}
+
+.search-bar input.__search-field:focus:valid~span.__field-border {
+    border-color: var(--color-yellow);
+}
+
+.search-bar input.__search-field:valid~i.__icon {
+    border-color: transparent;
 }
 
 .search-bar input.__search-field:valid~span.__placeholder,
 .search-bar input.__search-field:focus~span.__placeholder {
     visibility: hidden;
+    transition: none;
 }
 
 .search-bar input:focus~i.__icon {
     border: none;
 }
 
-.search-bar input:focus~i:hover.__icon {
+.search-bar input:focus~i:hover.__icon,
+.search-bar input:valid~i:hover.__icon {
     background: transparent;
 }
 
-.search-bar[data-state="shown"] {
+/* <<= Collapse Classes =>> */
+.search-bar[data-state="showing"] {
     pointer-events: all;
     animation: fade 1s ease backwards;
 }
 
-.search-bar[data-state="shown"] i.__icon {
+.search-bar[data-state="showing"] i.__icon {
     animation: rotate 1s ease;
 }
 
-.search-bar[data-state="hidden"] {
+.search-bar[data-state="showed"] {
+    opacity: 1;
+}
+
+.search-bar[data-state="hidding"] {
     animation: fade 1s ease reverse forwards;
     pointer-events: none;
 }
 
-.search-bar[data-state="hidden"] i.__icon {
+.search-bar[data-state="hidding"] i.__icon {
     animation: rotate 1s ease reverse;
+}
+
+.search-bar[data-state="hidded"] {
+    opacity: 0;
 }
 
 @keyframes clip-path {
     0% {
         clip-path: inset(0 30% 80% 30%);
+        border-color: transparent;
     }
 
     15% {
@@ -145,6 +171,9 @@
 
     to {
         clip-path: inset(75% 0 0 0);
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        border: 3px solid var(--color-yellow);
     }
 }
 

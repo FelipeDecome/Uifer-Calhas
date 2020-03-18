@@ -7,7 +7,6 @@
 
         <?php include PATH_COMPONENTS . "search-bar/search-bar.php"?>
 
-
         <nav class="navbar" id="navbar">
             <ul>
                 <a href="#">
