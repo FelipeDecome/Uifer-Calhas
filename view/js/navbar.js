@@ -1,4 +1,10 @@
 window.onload = function () {
+
+    verifyBottomNav()
+
+    /* scroll */
+    createListener()
+
     //* Pega todos os Botões
     const buttons = document.querySelectorAll('[data-target]')
 
@@ -11,23 +17,23 @@ window.onload = function () {
         buttons[i].addEventListener('click', function () {
 
             //* verifica se tem active no botão, se sim remove ele, se não, adciona
-            if (buttons[i].getAttribute('data-state') != 'active') {
+            if (buttons[i].getAttribute('data-active') != 'true') {
                 //* Remove todos os actives dos botões
                 removeAllActives(buttons)
-                buttons[i].setAttribute('data-state', 'active')
+                buttons[i].setAttribute('data-active', 'true')
+
             } else {
-                buttons[i].removeAttribute('data-state')
+                buttons[i].removeAttribute('data-active')
             }
 
             let element = document.querySelector(collapse)
-            if (!element.classList.contains('collapse')) {
+            if (element.getAttribute('data-state') != 'shown') {
                 removeAllCollapses(buttons)
 
-                element.classList.add('collapse')
+                element.setAttribute('data-state', 'shown');
             } else {
-                element.classList.remove('collapse')
+                element.setAttribute('data-state', 'hidded');
             }
-
             verifyBackCollapse()
         })
     }
@@ -41,7 +47,7 @@ window.onresize = function () {
             let collapseId = button.getAttribute('data-target')
             let collapse = document.querySelector(collapseId)
 
-            if (collapseId == '#navbar' && button.getAttribute('data-state') == 'active') {
+            if (collapseId == '#navbar' && button.getAttribute('data-active') == 'true') {
                 button.removeAttribute('data-state')
                 collapse.classList.remove('collapse')
 
@@ -53,10 +59,11 @@ window.onresize = function () {
 
 function verifyBackCollapse() {
     let body = document.querySelector('body')
-    let elements = document.querySelectorAll(".collapse")
-    let buttons = document.querySelectorAll('[data-state]')
+    let elements = document.querySelectorAll("[data-state='shown']")
+    let buttons = document.querySelectorAll('[data-active]')
 
     if (elements.length) {
+
         if (!body.classList.contains('active')) {
             toggleClass(body, "fade", "active")
         }

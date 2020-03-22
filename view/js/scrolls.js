@@ -1,7 +1,7 @@
 const header = document.querySelector('header')
 const docElem = document.documentElement
 
-window.onload = createListener()
+// window.onload = createListener()
 
 function createListener() {
     verifyScrollPos()
