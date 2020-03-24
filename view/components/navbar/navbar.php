@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?php echo PATH_COMPONENTS ?>navbar/css/navbar.css">
 
-<nav class="navbar" id="navbar" data-state="hidded">
+<nav class="navbar" id="navbar">
     <ul class="navbar__list">
         <li class="navbar__item active">
             <a href="" class="navbar__item-link"></a>

@@ -3,6 +3,12 @@ window.onload = function () {
     //* Spacing Search
     verifyBottomNav()
 
+    //* Navbar Animation Delay
+    let itens = document.querySelectorAll('.navbar__item')
+    for (let i = 0; i < itens.length; i++) {
+        itens[i].style.animationDelay = `${50 + (i * 50)}ms`;
+    }
+
     //* Scroll
     createListener()
 
@@ -42,6 +48,10 @@ window.onload = function () {
             }
 
             verifyBackCollapse()
+
+            //* Spacing Search
+            verifyBottomNav()
+
         })
     }
 }
@@ -58,9 +68,9 @@ window.onresize = function () {
             let collapseId = button.getAttribute('data-target')
             let collapse = document.querySelector(collapseId)
 
-            if (collapseId == '#navbar' && button.getAttribute('data-state') == 'active') {
-                button.removeAttribute('data-state')
-                collapse.classList.remove('collapse')
+            if (collapseId == '#navbar' && button.classList.contains('active')) {
+                toggleClass(button, 'active')
+                toggleClass(collapse, 'collapse')
 
                 verifyBackCollapse()
             }
@@ -71,7 +81,7 @@ window.onresize = function () {
 function verifyBackCollapse() {
     let body = document.querySelector('body')
     let elements = document.querySelectorAll(".collapse")
-    let buttons = document.querySelectorAll('[data-state]')
+    let buttons = document.querySelectorAll('.collapse-icons-bar .active')
 
     if (elements.length) {
         if (!body.classList.contains('active')) {
@@ -102,8 +112,8 @@ function verifyBackCollapse() {
 
 function removeAllActives(elements) {
     for (let i = 0; i < elements.length; i++) {
-        if (elements[i].getAttribute('data-state') === 'active') {
-            elements[i].removeAttribute('data-state')
+        if (elements[i].classList.contains('active')) {
+            toggleClass(elements[i], 'active')
         }
     }
 }
@@ -116,8 +126,7 @@ function removeAllCollapses(buttons) {
         let element = document.querySelector(collapse)
 
         if (element.classList.contains('collapse')) {
-            toggleClass(element, null, 'colapse')
-            // element.classList.remove('collapse')
+            toggleClass(element, 'collapse')
         }
     }
 }

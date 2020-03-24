@@ -6,11 +6,8 @@ function verifyBottomNav() {
 }
 
 function navbarAppear() {
-    nav.classList.addEventListener('change', () => {
-        let itens = document.querySelectorAll('.navbar__item')
-        for (let i = 0; i < itens.length; i++) {
-
-        }
-    })
-
+    let itens = document.querySelectorAll('.navbar__item')
+    for (let i = 0; i < itens.length; i++) {
+        itens[i].style.animationDelay = `${50 + (i * 50)}ms`;
+    }
 }

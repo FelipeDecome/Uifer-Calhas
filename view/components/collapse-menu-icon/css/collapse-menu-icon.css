@@ -1,0 +1,51 @@
+/* * <=<** === COLLAPSE MENU ICON CSS === **>=>*/
+
+div.collapse-menu-icon > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.collapse-menu-icon > ul > li {
+    background-color: var(--color-white);
+    transition-property: transform, color;
+    transition: ease 300ms;
+    margin: 4px 0;
+}
+
+div.collapse-menu-icon:hover ul > li {
+    background-color: var(--color-yellow);
+}
+
+div.collapse-menu-icon > ul > li:first-child,
+div.collapse-menu-icon > ul > li:nth-child(3) {
+    width: 30px;
+    height: 3px;
+}
+
+div.collapse-menu-icon > ul > li:nth-child(2) {
+    width: 26px;
+    height: 2px;
+}
+
+div.collapse-menu-icon.active > ul {
+    display: block;
+}
+
+div.collapse-menu-icon.active > ul > li {
+    margin: 0;
+}
+
+div.collapse-menu-icon.active > ul > li:first-child {
+    transform: translateY(2px) rotate(45deg);
+    height: 4px;
+}
+
+div.collapse-menu-icon.active > ul > li:nth-child(3) {
+    transform: translateY(-2px) rotate(-45deg);
+    height: 4px;
+}
+
+div.collapse-menu-icon.active > ul > li:nth-child(2) {
+    display: none;
+}

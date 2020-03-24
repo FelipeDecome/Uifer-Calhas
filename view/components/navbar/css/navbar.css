@@ -1,6 +1,7 @@
 nav.navbar {
     position: absolute;
-    right: -100vw;
+    display: none;
+    left: 0;
     width: 100%;
     padding: 10px 0;
     transition: all 500ms ease;
@@ -8,7 +9,7 @@ nav.navbar {
 
 nav.navbar.collapse {
     display: block;
-    right: 0;
+    animation: fade 500ms ease;
 }
 
 ul.navbar__list {
@@ -22,6 +23,15 @@ li.navbar__item {
     width: 100%;
     padding: 15px 0;
     text-align: center;
+    animation-fill-mode: forwards;
+}
+
+.collapse li.navbar__item:nth-child(odd) {
+    animation: appearLeft 800ms ease;
+}
+
+.collapse li.navbar__item:nth-child(even) {
+    animation: appearRight 800ms ease;
 }
 
 li.navbar__item a {
@@ -52,6 +62,7 @@ li.navbar__item.active span {
     nav.navbar {
         width: auto;
         position: unset;
+        visibility: visible;
     }
 
     ul.navbar__list {
@@ -74,41 +85,5 @@ li.navbar__item.active span {
     li.navbar__item:hover span,
     li.navbar__item.active span {
         color: var(--color-white);
-    }
-}
-
-@keyframes appearRight {
-    from {
-        margin-left: 120vw;
-    }
-
-    50% {
-        margin-left: -10vw;
-    }
-
-    85% {
-        margin-left: 0vw;
-    }
-
-    to {
-        margin-left: inherit;
-    }
-}
-
-@keyframes appearLeft {
-    from {
-        margin-left: -120vw;
-    }
-
-    50% {
-        margin-left: 10vw;
-    }
-
-    85% {
-        margin-left: 0vw;
-    }
-
-    to {
-        margin-left: inherit;
     }
 }
