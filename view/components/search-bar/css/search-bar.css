@@ -4,6 +4,16 @@
     bottom: -75px;
     width: 100%;
     padding: 30px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-bar.collapse {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .search-bar * {
@@ -83,6 +93,15 @@
     border-left: 1px solid var(--color-gray);
 }
 
+.search-bar.collapse span.__field-border {
+    animation: appearLeft 500ms ease backwards;
+}
+
+.search-bar.collapse span.__placeholder,
+.search-bar.collapse i.__icon {
+    animation: fade 500ms ease 300ms backwards;
+}
+
 /* <<= Pseudo Classes =>> */
 .search-bar input:focus,
 .search-bar i.__icon:hover {
@@ -93,11 +112,12 @@
     background: var(--color-black-text);
 }
 
-.search-bar input.__search-field:focus~span.__field-border {
+.search-bar input.__search-field:focus ~ span.__field-border {
     animation: clip-path 500ms ease forwards;
+    border: 3px solid var(--color-gray);
 }
 
-.search-bar input.__search-field:valid~span.__field-border {
+.search-bar input.__search-field:valid ~ span.__field-border {
     animation: none;
     clip-path: inset(75% 0 0 0);
     width: calc(100% - 6px);
@@ -105,26 +125,26 @@
     border: 3px solid var(--color-gray);
 }
 
-.search-bar input.__search-field:focus:valid~span.__field-border {
+.search-bar input.__search-field:focus:valid ~ span.__field-border {
     border-color: var(--color-yellow);
 }
 
-.search-bar input.__search-field:valid~i.__icon {
+.search-bar input.__search-field:valid ~ i.__icon {
     border-color: transparent;
 }
 
-.search-bar input.__search-field:valid~span.__placeholder,
-.search-bar input.__search-field:focus~span.__placeholder {
+.search-bar input.__search-field:valid ~ span.__placeholder,
+.search-bar input.__search-field:focus ~ span.__placeholder {
     visibility: hidden;
     transition: none;
 }
 
-.search-bar input:focus~i.__icon {
+.search-bar input:focus ~ i.__icon {
     border: none;
 }
 
-.search-bar input:focus~i:hover.__icon,
-.search-bar input:valid~i:hover.__icon {
+.search-bar input:focus ~ i:hover.__icon,
+.search-bar input:valid ~ i:hover.__icon {
     background: transparent;
 }
 
@@ -138,10 +158,6 @@
     animation: rotate 1s ease;
 }
 
-.search-bar[data-state="showed"] {
-    opacity: 1;
-}
-
 .search-bar[data-state="hidding"] {
     animation: fade 1s ease reverse forwards;
     pointer-events: none;
@@ -149,10 +165,6 @@
 
 .search-bar[data-state="hidding"] i.__icon {
     animation: rotate 1s ease reverse;
-}
-
-.search-bar[data-state="hidded"] {
-    opacity: 0;
 }
 
 @keyframes clip-path {
@@ -186,6 +198,5 @@
     to {
         transform: rotate(0);
         border-color: transparent;
-
     }
 }

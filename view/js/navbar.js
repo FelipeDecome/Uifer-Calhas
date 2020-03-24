@@ -1,8 +1,15 @@
 window.onload = function () {
 
+    //* Spacing Search
     verifyBottomNav()
 
-    /* scroll */
+    //* Navbar Animation Delay
+    let itens = document.querySelectorAll('.navbar__item')
+    for (let i = 0; i < itens.length; i++) {
+        itens[i].style.animationDelay = `${50 + (i * 50)}ms`;
+    }
+
+    //* Scroll
     createListener()
 
     //* Pega todos os Botões
@@ -17,39 +24,53 @@ window.onload = function () {
         buttons[i].addEventListener('click', function () {
 
             //* verifica se tem active no botão, se sim remove ele, se não, adciona
-            if (buttons[i].getAttribute('data-active') != 'true') {
+            // if (buttons[i].getAttribute('data-state') != 'active') {
+            if (!buttons[i].classList.contains('active')) {
                 //* Remove todos os actives dos botões
                 removeAllActives(buttons)
-                buttons[i].setAttribute('data-active', 'true')
 
+                // buttons[i].setAttribute('data-state', 'active')
+                toggleClass(buttons[i], '', 'active')
             } else {
-                buttons[i].removeAttribute('data-active')
+                // buttons[i].removeAttribute('data-state')
+                toggleClass(buttons[i], 'active')
             }
 
             let element = document.querySelector(collapse)
-            if (element.getAttribute('data-state') != 'shown') {
+            if (!element.classList.contains('collapse')) {
                 removeAllCollapses(buttons)
 
-                element.setAttribute('data-state', 'shown');
+                toggleClass(element, '', 'collapse')
+                // element.classList.add('collapse')
             } else {
-                element.setAttribute('data-state', 'hidded');
+                toggleClass(element, 'collapse')
+                // element.classList.remove('collapse')
             }
+
             verifyBackCollapse()
+
+            //* Spacing Search
+            verifyBottomNav()
+
         })
     }
 }
 
 //* Remove as classes Collapse / Active dos elementos que mudam dps de 992px
 window.onresize = function () {
+
+    //* Spacing Search
+    verifyBottomNav()
+
     if (window.innerWidth > 992) {
         let buttons = document.querySelectorAll('[data-target]')
         buttons.forEach(button => {
             let collapseId = button.getAttribute('data-target')
             let collapse = document.querySelector(collapseId)
 
-            if (collapseId == '#navbar' && button.getAttribute('data-active') == 'true') {
-                button.removeAttribute('data-state')
-                collapse.classList.remove('collapse')
+            if (collapseId == '#navbar' && button.classList.contains('active')) {
+                toggleClass(button, 'active')
+                toggleClass(collapse, 'collapse')
 
                 verifyBackCollapse()
             }
@@ -59,11 +80,10 @@ window.onresize = function () {
 
 function verifyBackCollapse() {
     let body = document.querySelector('body')
-    let elements = document.querySelectorAll("[data-state='shown']")
-    let buttons = document.querySelectorAll('[data-active]')
+    let elements = document.querySelectorAll(".collapse")
+    let buttons = document.querySelectorAll('.collapse-icons-bar .active')
 
     if (elements.length) {
-
         if (!body.classList.contains('active')) {
             toggleClass(body, "fade", "active")
         }
@@ -92,8 +112,8 @@ function verifyBackCollapse() {
 
 function removeAllActives(elements) {
     for (let i = 0; i < elements.length; i++) {
-        if (elements[i].getAttribute('data-state') === 'active') {
-            elements[i].removeAttribute('data-state')
+        if (elements[i].classList.contains('active')) {
+            toggleClass(elements[i], 'active')
         }
     }
 }
@@ -106,7 +126,7 @@ function removeAllCollapses(buttons) {
         let element = document.querySelector(collapse)
 
         if (element.classList.contains('collapse')) {
-            element.classList.remove('collapse')
+            toggleClass(element, 'collapse')
         }
     }
 }

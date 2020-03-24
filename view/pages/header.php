@@ -10,20 +10,12 @@
         <?php include PATH_COMPONENTS . "navbar/navbar.php"?>
 
         <div class="collapse-icons-bar">
-            <div class="collapse-search-bar-icon" data-target="#searchBar">
-                <i class="fas fa-search"></i>
 
-            </div>
+            <?php include PATH_COMPONENTS . "collapse-search-bar-icon/collapse-search-bar-icon.php"?>
 
-            <div class="collapse-menu-icon" data-target="#navbar">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
+            <?php include PATH_COMPONENTS . "collapse-menu-icon/collapse-menu-icon.php"?>
+
         </div>
-
     </div>
 </header>
 

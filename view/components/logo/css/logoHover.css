@@ -18,11 +18,8 @@
 }
 
 .logo:hover a .__text span {
-    text-shadow:
-        -1px 0px 2px var(--color-red),
-        0px 1px 2px var(--color-red),
-        1px 0px 2px var(--color-red),
-        0px -1px 2px var(--color-red);
+    text-shadow: -1px 0px 2px var(--color-red), 0px 1px 2px var(--color-red),
+        1px 0px 2px var(--color-red), 0px -1px 2px var(--color-red);
 }
 
 .logo a svg path:first-child {
@@ -32,6 +29,14 @@
 .logo a svg path:nth-child(2) {
     fill: var(--color-white);
 }
+
+/* .header-top .logo a svg path:first-child {
+    fill: var(--color-white);
+}
+
+.header-top .logo a svg path:nth-child(2) {
+    fill: var(--color-black-text);
+} */
 
 .logo:hover a svg path:first-child {
     fill: var(--color-blue);

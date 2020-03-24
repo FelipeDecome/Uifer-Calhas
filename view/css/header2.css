@@ -42,11 +42,12 @@ html.header-top header.header {
     background: linear-gradient(var(--color-black-nav) 0%, transparent 100%);
 }
 
+/* <=< Reseta o width da class .content no header >=> */
 header.header .content {
     max-width: 100%;
 }
 
-/* <<= Define o tamanho do logo =>> */
+/* <=< Define o tamanho do logo >=> */
 header.header .logo a svg {
     width: 60px;
 }
@@ -59,4 +60,25 @@ header.header .logo a .__text {
     display: flex;
     margin-left: -35px;
     margin-bottom: -5px;
+}
+
+/* <=< Icons Collapse >=>*/
+
+header.header div.collapse-icons-bar {
+    display: flex;
+    justify-self: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.collapse-icons-bar div.collapse-menu-icon,
+.collapse-icons-bar div.collapse-search-bar-icon {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    div.collapse-icons-bar div.collapse-menu-icon {
+        display: none;
+    }
 }

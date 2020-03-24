@@ -45,6 +45,10 @@
     border: none;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .clarendon {
     font-family: "Clarendon";
 }
@@ -107,5 +111,41 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes appearRight {
+    from {
+        left: 120vw;
+    }
+
+    50% {
+        left: -10vw;
+    }
+
+    85% {
+        left: 0vw;
+    }
+
+    to {
+        left: inherit;
+    }
+}
+
+@keyframes appearLeft {
+    from {
+        left: -120vw;
+    }
+
+    50% {
+        left: 10vw;
+    }
+
+    85% {
+        left: 0vw;
+    }
+
+    to {
+        left: inherit;
     }
 }
