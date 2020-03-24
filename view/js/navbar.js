@@ -1,8 +1,9 @@
 window.onload = function () {
 
+    //* Back Collapses
     verifyBottomNav()
 
-    /* scroll */
+    //* Scroll
     createListener()
 
     //* Pega todos os Botões
@@ -17,23 +18,25 @@ window.onload = function () {
         buttons[i].addEventListener('click', function () {
 
             //* verifica se tem active no botão, se sim remove ele, se não, adciona
-            if (buttons[i].getAttribute('data-active') != 'true') {
+            if (buttons[i].getAttribute('data-state') != 'active') {
                 //* Remove todos os actives dos botões
                 removeAllActives(buttons)
-                buttons[i].setAttribute('data-active', 'true')
-
+                buttons[i].setAttribute('data-state', 'active')
             } else {
-                buttons[i].removeAttribute('data-active')
+                buttons[i].removeAttribute('data-state')
             }
 
             let element = document.querySelector(collapse)
-            if (element.getAttribute('data-state') != 'shown') {
+            if (!element.classList.contains('collapse')) {
                 removeAllCollapses(buttons)
 
-                element.setAttribute('data-state', 'shown');
+                toggleClass(element, null, 'colapse')
+                // element.classList.add('collapse')
             } else {
-                element.setAttribute('data-state', 'hidded');
+                toggleClass(element, 'colapse')
+                // element.classList.remove('collapse')
             }
+
             verifyBackCollapse()
         })
     }
@@ -47,7 +50,7 @@ window.onresize = function () {
             let collapseId = button.getAttribute('data-target')
             let collapse = document.querySelector(collapseId)
 
-            if (collapseId == '#navbar' && button.getAttribute('data-active') == 'true') {
+            if (collapseId == '#navbar' && button.getAttribute('data-state') == 'active') {
                 button.removeAttribute('data-state')
                 collapse.classList.remove('collapse')
 
@@ -59,11 +62,10 @@ window.onresize = function () {
 
 function verifyBackCollapse() {
     let body = document.querySelector('body')
-    let elements = document.querySelectorAll("[data-state='shown']")
-    let buttons = document.querySelectorAll('[data-active]')
+    let elements = document.querySelectorAll(".collapse")
+    let buttons = document.querySelectorAll('[data-state]')
 
     if (elements.length) {
-
         if (!body.classList.contains('active')) {
             toggleClass(body, "fade", "active")
         }
@@ -106,7 +108,8 @@ function removeAllCollapses(buttons) {
         let element = document.querySelector(collapse)
 
         if (element.classList.contains('collapse')) {
-            element.classList.remove('collapse')
+            toggleClass(element, null, 'colapse')
+            // element.classList.remove('collapse')
         }
     }
 }

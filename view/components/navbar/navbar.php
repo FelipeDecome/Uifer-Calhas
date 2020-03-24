@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="<?php echo PATH_COMPONENTS ?>navbar/css/navbar.css">
 
 <nav class="navbar" id="navbar" data-state="hidded">
-    <ul class="navbar__list">
-        <li class="navbar__item active">
+    <ul class="navbar__list flex __j-between __a-center">
+        <li class="navbar__item">
             <a href="" class="navbar__item-link"></a>
             <span class="navar__text-link">Home</span>
         </li>

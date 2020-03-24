@@ -23,10 +23,5 @@
                 </ul>
             </div>
         </div>
-
     </div>
 </header>
-
-<script src="<?php echo PATH_JS ?>scrolls.js"></script>
-<script src="<?php echo PATH_JS ?>sizesSpacings.js"></script>
-<script src="<?php echo PATH_JS ?>navbar.js"></script>
