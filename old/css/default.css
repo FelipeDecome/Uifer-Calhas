@@ -1,0 +1,186 @@
+/*
+Red: FF3F3F
+Blue: 00668C
+Yellow: FFBB00
+Green: 1DC6A7
+*/
+
+:root {
+    --color-red: #ff3f3f;
+    --color-blue: #00668c;
+    --color-yellow: #ffbb00;
+    --color-green: #1dc6a7;
+    --color-black-nav: #111;
+    --color-black-text: #333;
+    --color-black-section: #1f1f1f;
+    --color-black-text-section: #2f2f2f;
+    --color-gray: #a9a9a9;
+    --color-white: #fff;
+
+    --navbar-back-open-shadow: rgba(17, 17, 17, 0.95);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@font-face {
+    font-family: Clarendon;
+    src: url(./../fonts/clarendon.otf);
+}
+
+@font-face {
+    font-family: Clarendon BLK BT;
+    src: url(./../fonts/clarendon-black-bt.ttf);
+}
+
+* {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    /* padding: 0;
+  margin: 0;
+  outline: 0; */
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+input {
+    font-family: "Josefin Slab", sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+header,
+main,
+footer {
+    padding: 0 20px;
+    width: calc(100vw - 40px);
+}
+
+@media (min-width: 768px) {
+
+    header,
+    main,
+    footer {
+        padding: 0 60px;
+        width: calc(100vw - 120px);
+    }
+}
+
+@media (min-width: 992px) {
+
+    header,
+    main,
+    footer {
+        padding: 0 80px;
+        width: calc(100vw - 160px);
+    }
+}
+
+/* * <=<** === SECTION === **>=>*/
+section {
+
+    display: flex;
+
+    padding: 100px 0;
+}
+
+section>header {}
+
+/* * <=<** === DEFAULT CLASSES === **>=>*/
+.red {
+    color: var(--color-red);
+}
+
+.blue {
+    color: var(--color-blue);
+}
+
+.yellow {
+    color: var(--color-yellow);
+}
+
+.green {
+    color: var(--color-green);
+}
+
+/* * <=<** === LOGO CSS === **>=>*/
+
+.logo span {
+    font-family: "Clarendon BLK BT";
+    font-size: 24px;
+    transition: all ease 500ms;
+}
+
+.logo>a>span:first-child {
+    color: var(--color-red);
+}
+
+.logo>a>span:nth-child(2) {
+    color: var(--color-blue);
+}
+
+.logo span>span,
+.logo:hover a span {
+    color: var(--color-white);
+}
+
+.logo:hover a span:first-child>span {
+    color: var(--color-red);
+}
+
+.logo:hover a span:nth-child(2)>span {
+    color: var(--color-blue);
+}
+
+.btn {
+    border: none;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: 300ms;
+}
+
+.btn span {
+    font-family: "Clarendon BLK BT", serif;
+    font-size: 16px;
+}
+
+.btn-yellow {
+    background: var(--color-yellow);
+}
+
+.btn-yellow:hover {
+    background: transparent;
+    border-color: var(--color-yellow);
+}
+
+.btn-yellow:hover span {
+    color: var(--color-yellow);
+}
+
+.btn-yellow:hover i {
+    color: #fff;
+}
+
+/*E: default Animations */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

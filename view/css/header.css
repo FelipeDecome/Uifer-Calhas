@@ -9,7 +9,7 @@ body::before {
     bottom: 0;
     right: 0;
     background-color: var(--navbar-back-open-shadow);
-    z-index: 2;
+    z-index: 11;
 }
 
 body.active::before {
@@ -21,170 +21,56 @@ body.fade::before {
 }
 
 header.header {
-    position: fixed;
+    position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
     background: var(--color-black-nav);
-    z-index: 3;
-    transition: all 500ms ease;
+    z-index: 12;
 }
 
-.header-top header {
+html.header-top header.header {
+    position: fixed;
+    width: 100%;
     padding-top: 40px;
+    background: -webkit-linear-gradient(
+        var(--color-black-nav) 0%,
+        transparent 100%
+    );
+    background: -moz-linear-gradient(
+        var(--color-black-nav) 0%,
+        transparent 100%
+    );
+    background: -o-linear-gradient(var(--color-black-nav) 0%, transparent 100%);
     background: linear-gradient(var(--color-black-nav) 0%, transparent 100%);
-    animation: navbarEffect ease 500ms;
 }
-/*
-.scroll header {
-} */
 
-/* * <=<** === LOGO CSS === **>=>*/
+/* <=< Reseta o width da class .content no header >=> */
+@media (max-width: 1439px) {
+    header.header .content {
+        max-width: 100%;
+    }
+}
 
-header.header div.logo {
+/* <=< Define o tamanho do logo >=> */
+header.header .logo a svg {
+    width: 60px;
+}
+
+header.header .logo a .__text span {
+    font-size: 20px;
+}
+
+header.header .logo a .__text {
     display: flex;
-    align-items: center;
+    margin-left: -35px;
+    margin-bottom: -5px;
 }
 
-/* * <=<** === SEARCH BAR CSS === **>=>*/
-
-header.header div.search-bar {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 30px;
-    right: 0;
-    padding: 20px 0;
-    margin-top: 54px;
-    z-index: 4;
-}
-
-header.header div.search-bar.collapse {
-    display: initial;
-}
-
-div.wrap-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-div.wrap-input {
-    position: relative;
-    height: 100%;
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div.wrap-content div * {
-    transition: all ease 300ms;
-    color: var(--color-black-text);
-}
-
-div.wrap-content input {
-    animation: searchAppearLeft ease-in-out 1s;
-    padding: 0;
-    width: 100%;
-    height: calc(100% - 2px);
-    border: 1px solid var(--color-gray);
-    border-radius: 3px;
-    text-indent: 10px;
-}
-
-div.wrap-content input:focus {
-    border-color: var(--color-yellow);
-}
-
-div.wrap-content span {
-    animation: searchAppearRight ease 1s;
-    position: absolute;
-    left: 10px;
-    pointer-events: none;
-}
-
-div.wrap-content input:focus ~ span,
-div.wrap-content input:valid ~ span {
-    opacity: 0;
-}
-
-div.wrap-content i {
-    animation: searchButton ease 500ms backwards 800ms;
-    position: absolute;
-    right: 0px;
-    height: 100%;
-    padding: 0 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    color: var(--color-yellow);
-    background-color: var(--color-black-text);
-    border-radius: 0 3px 3px 0;
-}
-
-div.wrap-content i:hover {
-    height: calc(100% - 2px);
-    border-left: 1px solid var(--color-yellow);
-    color: var(--color-black-text);
-    background-color: var(--color-yellow);
-}
-
-/* * <=<** === NAVBAR CSS === **>=>*/
-
-nav.navbar {
-    position: fixed;
-    display: none;
-    width: 100%;
-    margin-top: 54px;
-    right: 0;
-    z-index: 5;
-}
-
-nav.navbar.collapse {
-    display: block;
-}
-
-nav.navbar > ul {
-    display: flex;
-    flex-direction: column;
-}
-
-nav.navbar ul li {
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    color: var(--color-white);
-    /* margin: 15px 30px; */
-    padding: 10px 0;
-    text-align: center;
-    transition: all ease 500ms;
-    /* cursor: pointer; */
-}
-
-nav.navbar.collapse ul a:nth-child(odd) li {
-    animation: searchAppearLeft ease 1s backwards;
-}
-
-nav.navbar.collapse ul a:nth-child(even) li {
-    animation: searchAppearRight ease 1s backwards;
-}
-
-nav.navbar > ul li:hover,
-nav.navbar > ul li.active {
-    color: var(--color-black-text);
-    background-color: var(--color-yellow);
-}
-
-/* * <=<** === COLLAPSE ICONS CSS === **>=>*/
+/* <=< Icons Collapse >=>*/
 
 header.header div.collapse-icons-bar {
     display: flex;
     justify-self: center;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
 }
@@ -195,219 +81,8 @@ header.header div.collapse-icons-bar {
     cursor: pointer;
 }
 
-/* * <=<** === COLLAPSE MENU ICON CSS === **>=>*/
-
-div.collapse-menu-icon > ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-div.collapse-menu-icon > ul > li {
-    background-color: var(--color-white);
-    transition-property: transform, color;
-    transition: ease 300ms;
-    margin: 4px 0;
-}
-
-div.collapse-menu-icon:hover ul > li {
-    background-color: var(--color-yellow);
-}
-
-div.collapse-menu-icon > ul > li:first-child,
-div.collapse-menu-icon > ul > li:nth-child(3) {
-    width: 30px;
-    height: 3px;
-}
-
-div.collapse-menu-icon > ul > li:nth-child(2) {
-    width: 26px;
-    height: 2px;
-}
-
-div.collapse-menu-icon[data-state="active"] > ul {
-    display: block;
-}
-
-div.collapse-menu-icon[data-state="active"] > ul > li {
-    margin: 0;
-}
-
-div.collapse-menu-icon[data-state="active"] > ul > li:first-child {
-    transform: translateY(2px) rotate(45deg);
-    height: 4px;
-}
-
-div.collapse-menu-icon[data-state="active"] > ul > li:nth-child(3) {
-    transform: translateY(-2px) rotate(-45deg);
-    height: 4px;
-}
-
-div.collapse-menu-icon[data-state="active"] > ul > li:nth-child(2) {
-    display: none;
-}
-
-/* * <=<** === COLLAPSE SEARCH BAR ICON CSS === **>=>*/
-
-div.collapse-icons-bar div.collapse-search-bar-icon > i {
-    font-size: 20px;
-    color: var(--color-white);
-    transition: all ease 500ms;
-}
-
-div.collapse-icons-bar div.collapse-search-bar-icon > i:hover {
-    color: var(--color-yellow);
-}
-
-div.collapse-icons-bar div.collapse-search-bar-icon[data-state="active"] > i {
-    color: var(--color-yellow);
-    transform: rotate(-270deg);
-}
-
-/* * <=<** === MEDIA >=992 CSS === **>=>*/
-
 @media (min-width: 992px) {
-    /* * <=<** === Search bar CSS === **>=>*/
-
-    div.wrap-input {
-        width: 40%;
-    }
-
-    /* * <=<** === NAVBAR CSS === **>=>*/
-
-    nav.navbar {
-        position: initial;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-        width: initial;
-        margin-top: 0;
-    }
-
-    nav.navbar > ul {
-        flex-direction: row;
-        align-content: space-around;
-    }
-
-    nav.navbar > ul li {
-        position: relative;
-        margin: 0;
-        padding: 10px 25px;
-    }
-
-    nav.navbar > ul li:hover,
-    nav.navbar > ul li.active {
-        color: var(--color-yellow);
-        background-color: transparent;
-    }
-
-    nav.navbar > ul li::before {
-        content: "";
-        width: 10%;
-        height: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 40%;
-        opacity: 0;
-        transition: all ease 500ms;
-        border-bottom: 2px solid var(--color-yellow);
-    }
-
-    nav.navbar > ul li:hover::before,
-    nav.navbar > ul li.active::before {
-        opacity: 1;
-        left: 0;
-        width: 100%;
-    }
-
     div.collapse-icons-bar div.collapse-menu-icon {
         display: none;
-    }
-}
-
-@media (min-width: 1440px) {
-    /* * <=<** === Search bar CSS === **>=>*/
-
-    div.wrap-input {
-        width: 25%;
-    }
-}
-
-/* ! VERIFICAR ANIMAÇÃO */
-
-/* @keyframes {} */
-
-@keyframes searchButton {
-    from {
-        background-color: transparent;
-        transform: rotate(720deg);
-        opacity: 0;
-    }
-
-    50% {
-        background-color: transparent;
-        transform: rotate(0);
-        color: var(--color-black-text);
-    }
-
-    75% {
-        color: var(--color-white);
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes searchAppearRight {
-    from {
-        margin-left: 120vw;
-    }
-
-    50% {
-        margin-left: -10vw;
-    }
-
-    85% {
-        margin-left: 0vw;
-    }
-
-    to {
-        margin-left: inherit;
-    }
-}
-
-@keyframes searchAppearLeft {
-    from {
-        margin-left: -120vw;
-    }
-
-    50% {
-        margin-left: 10vw;
-    }
-
-    85% {
-        margin-left: 0vw;
-    }
-
-    to {
-        margin-left: inherit;
-    }
-}
-
-@keyframes navbarEffect {
-    1% {
-        opacity: 1;
-        top: 0;
-    }
-    25% {
-        opacity: 0;
-        top: -100px;
-    }
-
-    100% {
-        opacity: 1;
-        top: 0;
     }
 }

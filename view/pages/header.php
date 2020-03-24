@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo PATH_CSS ?>header2.css">
+<link rel="stylesheet" href="<?php echo PATH_CSS ?>header.css">
 
 <header class="header">
 

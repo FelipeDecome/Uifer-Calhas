@@ -1,114 +1,64 @@
-main.main_home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./../images/backgrounds/background-768.jpg");
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    min-height: 600px;
+    background-image: url("./../images/backgrounds/background@768.jpg");
     background-repeat: no-repeat, no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
-    min-height: 600px;
 }
-
-main.main_home::before {
+.home::before {
     content: "";
     position: absolute;
-    display: block;
-    width: 100vw;
+    width: 100%;
     height: 100%;
-    min-height: 600px;
     top: 0;
     left: 0;
     background-color: var(--navbar-back-open-shadow);
-}
-
-main.main_home * {
     z-index: 1;
 }
 
-main.main_home h1.main_logo,
-main.main_home p.slogan,
-main.main_home p.segment {
-    text-align: center;
-    color: var(--color-white);
+.home__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
 }
 
-main.main_home h1.main_logo,
-main.main_home p.slogan {
-    animation: fade ease 1500ms;
-    animation-fill-mode: backwards;
+/* <=< Define o tamanho do logo >=> */
+.home__logo .logo a svg {
+    width: 100px;
 }
 
-main.main_home h1.main_logo span {
-    font-family: "Clarendon BLK BT", serif;
-    font-size: 52px;
+.home__logo .logo a .__text span {
+    font-size: 48px;
 }
 
-main.main_home p.slogan {
-    font-size: 18px;
-}
-
-main.main_home div.divider {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 40%;
-    height: 1px;
-    background-color: var(--color-gray);
-    margin: 20px 0 0;
-}
-
-main.main_home p.segment,
-main.main_home p.segment span {
-    font-family: "Clarendon", serif;
-    font-size: 20px;
-}
-
-main.main_home p.segment {
-    margin-top: 20px;
-}
-
-main.main_home div.see_more {
-    margin-top: 50px;
-}
-
-main.main_home div.see_more .btn {
-    animation: moveUp ease 800ms;
-    animation-fill-mode: backwards;
-    animation-delay: 500ms;
+.home__logo .logo a .__text {
+    display: flex;
+    margin-left: -60px;
+    margin-bottom: -10px;
 }
 
 @media (min-width: 768px) {
-    main.main_home {
-        background-image: url("./../images/backgrounds/background-1200.jpg");
+    .home {
+        background-image: url("./../images/backgrounds/background@1200.jpg");
     }
 }
 
 @media (min-width: 992px) {
-    main.main_home {
-        background-image: url("./../images/backgrounds/background-1440.jpg");
+    .home {
+        background-image: url("./../images/backgrounds/background@1440.jpg");
     }
 }
 
 @media (min-width: 1440px) {
-    main.main_home {
-        background-image: url("./../images/backgrounds/background-1920.jpg");
-    }
-}
-
-@keyframes moveUp {
-    from {
-        opacity: 0;
-        margin-top: 50px;
-    }
-
-    25% {
-        opacity: 1;
-        margin-top: 50px;
-    }
-
-    to {
-        margin-top: 0;
+    .home {
+        background-image: url("./../images/backgrounds/background@1920.jpg");
     }
 }

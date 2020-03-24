@@ -5,6 +5,7 @@ nav.navbar {
     width: 100%;
     padding: 10px 0;
     transition: all 500ms ease;
+    z-index: 14;
 }
 
 nav.navbar.collapse {
@@ -62,7 +63,7 @@ li.navbar__item.active span {
     nav.navbar {
         width: auto;
         position: unset;
-        visibility: visible;
+        display: block;
     }
 
     ul.navbar__list {

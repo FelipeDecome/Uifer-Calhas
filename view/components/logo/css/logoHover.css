@@ -17,7 +17,8 @@
     color: var(--color-white);
 }
 
-.logo:hover a .__text span {
+.logo:hover a .__text span,
+.static .logo a .__text span {
     text-shadow: -1px 0px 2px var(--color-red), 0px 1px 2px var(--color-red),
         1px 0px 2px var(--color-red), 0px -1px 2px var(--color-red);
 }
@@ -38,10 +39,12 @@
     fill: var(--color-black-text);
 } */
 
-.logo:hover a svg path:first-child {
+.logo:hover a svg path:first-child,
+.static .logo a svg path:first-child {
     fill: var(--color-blue);
 }
 
-.logo:hover a svg path:nth-child(2) {
+.logo:hover a svg path:nth-child(2),
+.static .logo a svg path:nth-child(2) {
     fill: var(--color-red);
 }
