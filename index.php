@@ -12,7 +12,7 @@ require_once __DIR__ . "./config.php";
     <title>Document</title>
 
     <link rel="stylesheet" href="<?php echo PATH_CSS ?>default2.css">
-
+    <script src="<?php echo PATH_JS ?>utils.js"></script>
 </head>
 
 <body>

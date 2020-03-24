@@ -15,6 +15,8 @@
 
             </div>
 
+            <link rel="stylesheet" href="<?php echo PATH_COMPONENTS ?>collapse-menu-icon/css/collapse-menu-icon.css">
+
             <div class="collapse-menu-icon" data-target="#navbar">
                 <ul>
                     <li></li>
@@ -25,3 +27,7 @@
         </div>
     </div>
 </header>
+
+<script src="<?php echo PATH_JS ?>scrolls.js"></script>
+<script src="<?php echo PATH_JS ?>sizesSpacings.js"></script>
+<script src="<?php echo PATH_JS ?>navbar.js"></script>

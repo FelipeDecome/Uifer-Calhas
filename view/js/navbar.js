@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    //* Back Collapses
+    //* Spacing Search
     verifyBottomNav()
 
     //* Scroll
@@ -18,22 +18,26 @@ window.onload = function () {
         buttons[i].addEventListener('click', function () {
 
             //* verifica se tem active no botão, se sim remove ele, se não, adciona
-            if (buttons[i].getAttribute('data-state') != 'active') {
+            // if (buttons[i].getAttribute('data-state') != 'active') {
+            if (!buttons[i].classList.contains('active')) {
                 //* Remove todos os actives dos botões
                 removeAllActives(buttons)
-                buttons[i].setAttribute('data-state', 'active')
+
+                // buttons[i].setAttribute('data-state', 'active')
+                toggleClass(buttons[i], '', 'active')
             } else {
-                buttons[i].removeAttribute('data-state')
+                // buttons[i].removeAttribute('data-state')
+                toggleClass(buttons[i], 'active')
             }
 
             let element = document.querySelector(collapse)
             if (!element.classList.contains('collapse')) {
                 removeAllCollapses(buttons)
 
-                toggleClass(element, null, 'colapse')
+                toggleClass(element, '', 'collapse')
                 // element.classList.add('collapse')
             } else {
-                toggleClass(element, 'colapse')
+                toggleClass(element, 'collapse')
                 // element.classList.remove('collapse')
             }
 
@@ -44,6 +48,10 @@ window.onload = function () {
 
 //* Remove as classes Collapse / Active dos elementos que mudam dps de 992px
 window.onresize = function () {
+
+    //* Spacing Search
+    verifyBottomNav()
+
     if (window.innerWidth > 992) {
         let buttons = document.querySelectorAll('[data-target]')
         buttons.forEach(button => {
