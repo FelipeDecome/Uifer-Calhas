@@ -26,8 +26,22 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     z-index: 2;
+}
+
+.home__logo {
+    margin-bottom: 30px;
+}
+
+.home__logo p {
+    color: var(--color-white);
+    font-size: 18px;
+}
+
+.home__logo,
+.home__segments {
+    text-align: center;
 }
 
 /* <=< Define o tamanho do logo >=> */
@@ -46,14 +60,35 @@
 }
 
 /* <=< Segmentos >=> */
-.home__segments p {
+.home__segments * {
     font-family: "Clarendon";
     font-weight: 400;
     font-size: 24px;
 }
 
-.home__segments span:first-child {
+.home__segments p,
+.home__segments p > span > span {
+    color: var(--color-white);
+}
+
+.home__segments p > span:first-child {
     color: var(--color-red);
+}
+
+.home__segments p > span:nth-child(2) {
+    color: var(--color-yellow);
+}
+
+.home__segments p > span:nth-child(3) {
+    color: var(--color-blue);
+}
+
+.home__segments p > span:nth-child(4) {
+    color: var(--color-green);
+}
+
+.home__see-more {
+    margin-top: 50px;
 }
 
 @media (min-width: 768px) {

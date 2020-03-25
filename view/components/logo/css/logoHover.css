@@ -1,5 +1,6 @@
 .logo a {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -13,6 +14,8 @@
 }
 
 .logo a .__text span {
+    font-family: "Clarendon", sans-serif;
+    font-weight: bold;
     display: block;
     color: var(--color-white);
 }

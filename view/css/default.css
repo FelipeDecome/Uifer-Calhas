@@ -43,6 +43,7 @@
     margin: 0;
     outline: 0;
     border: none;
+    font-family: "josefin slab", sans-serif;
 }
 
 html {
@@ -102,6 +103,42 @@ html {
 
 .flex.__j-between {
     justify-content: space-between;
+}
+
+.btn {
+    border: none;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.btn span {
+    font-family: "Clarendon BLK BT", serif;
+    font-size: 16px;
+}
+
+.btn i {
+    font-size: 20px;
+}
+
+.btn-yellow {
+    background: var(--color-yellow);
+}
+
+.btn-yellow:hover {
+    background: transparent;
+    border-color: var(--color-yellow);
+}
+
+.btn-yellow:hover span {
+    color: var(--color-yellow);
+}
+
+.btn-yellow:hover i {
+    color: #fff;
 }
 
 @keyframes fade {
