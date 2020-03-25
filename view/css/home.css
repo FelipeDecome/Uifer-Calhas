@@ -45,6 +45,17 @@
     margin-bottom: -10px;
 }
 
+/* <=< Segmentos >=> */
+.home__segments p {
+    font-family: "Clarendon";
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.home__segments span:first-child {
+    color: var(--color-red);
+}
+
 @media (min-width: 768px) {
     .home {
         background-image: url("./../images/backgrounds/background@1200.jpg");

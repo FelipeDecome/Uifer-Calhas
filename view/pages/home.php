@@ -6,7 +6,16 @@
             <?php include PATH_COMPONENTS . "logo/logo.php"?>
         </div>
         <div class="home__segments">
-            <span></span>
+            <p>
+                <span>Artesanato</span>
+                -
+                <span>Calhas</span>
+                -
+                <span>Funilaria Industrial</span>
+                -
+                <span>Serviços <span>&</span> Manutenções</span>
+                .
+            </p>
         </div>
         <button class="home__see-more">
             <span>Saiba Mais</span>
