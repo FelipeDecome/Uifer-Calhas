@@ -23,6 +23,9 @@ require_once __DIR__ . "./config.php";
     <?php include_once "./view/pages/home.php";?>
 
     <script src="https://kit.fontawesome.com/67895c6c28.js" crossorigin="anonymous"></script>
+    <script src="<?php echo PATH_JS ?>scrolls.js"></script>
+    <script src="<?php echo PATH_JS ?>sizesSpacings.js"></script>
+    <script src="<?php echo PATH_JS ?>navbar.js"></script>
 </body>
 
 </html>

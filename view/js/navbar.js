@@ -1,4 +1,10 @@
+document.documentElement.style.opacity = 0
+document.documentElement.style.background = "var(--navbar-back-open-shadow)"
+
+
 window.onload = function () {
+
+    document.documentElement.style.opacity = 1
 
     //* Spacing Search
     verifyBottomNav()

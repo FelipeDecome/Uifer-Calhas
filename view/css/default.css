@@ -48,6 +48,7 @@
 
 html {
     overflow-x: hidden;
+    height: 200vh;
 }
 
 .clarendon {
@@ -139,6 +140,28 @@ html {
 
 .btn-yellow:hover i {
     color: #fff;
+}
+
+.fade {
+    animation: fade 1s ease backwards;
+}
+
+.fade-2-300 {
+    animation: fade 2s ease 200ms backwards;
+}
+
+.fadeup {
+    animation: fadeup 2s ease backwards;
+}
+
+@keyframes fadeup {
+    from {
+        margin-top: 100px;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fade {
